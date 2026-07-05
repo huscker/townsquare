@@ -2,6 +2,13 @@
 
 > :warning: **This project is no longer actively maintained** and will only receive critical bug fixes. :warning:
 
+> **Fork note**: This fork adds **Docker** and **Kubernetes (Helm)** support for
+> self-hosted deployments. The original upstream project
+> ([bra1n/townsquare](https://github.com/bra1n/townsquare)) is deployed as a
+> static site + external WebSocket server. This fork containerises both
+> components and provides a production-ready Helm chart. See
+> [Docker & Kubernetes Deployment](#docker--kubernetes-deployment) below.
+
 ![social](https://user-images.githubusercontent.com/325521/102897760-d1147b00-4468-11eb-9d7b-63a204bc9fc1.png)
 
 This is an unofficial online tool to run Blood on the Clocktower games through Discord or other digital means.
@@ -12,9 +19,11 @@ It is supposed to aid storytellers and players by allowing them to quickly set u
 If you want to learn more about how to use the app as a player, [JayBotC](https://www.youtube.com/channel/UCNZy-4Rp877XtTHaIZdWYFQ) kindly created two tutorial videos.
 
 ### How to host a game
+
 [![How to host a game](https://img.youtube.com/vi/lVRJPBXfqxg/0.jpg)](https://www.youtube.com/watch?v=lVRJPBXfqxg)
 
 ### How to play a game
+
 [![How to play a game](https://img.youtube.com/vi/VCpFnJFiCbk/0.jpg)](https://www.youtube.com/watch?v=VCpFnJFiCbk)
 
 ## Features
@@ -72,11 +81,11 @@ definition file might be written:
     "team": "outsider",
     "ability": "Each night*, if either good living neighbor is drunk or poisoned, you die."
   },
-  { 
-    "id": "investigator" 
+  {
+    "id": "investigator"
   },
-  { 
-    "id": "imp" 
+  {
+    "id": "imp"
   }
 ]
 ```
@@ -107,18 +116,113 @@ For base game characters, it is sufficient to only provide the ID, similar to wh
 
 ## [Contributing](CONTRIBUTING.md)
 
+## Docker & Kubernetes Deployment
+
+This fork containerises the application into **two images** built from a single
+multi-stage `Dockerfile`:
+
+| Image                 | Target     | Content                                          |
+| --------------------- | ---------- | ------------------------------------------------ |
+| `townsquare-frontend` | `frontend` | nginx serving the built Vue.js SPA               |
+| `townsquare-backend`  | `backend`  | Node.js WebSocket server with Prometheus metrics |
+
+### Building the images
+
+```bash
+# Both targets share a common build stage (npm install + npm run build)
+docker build --target frontend -t townsquare-frontend .
+docker build --target backend  -t townsquare-backend .
+```
+
+### Deploying with Helm
+
+The Helm chart is in [`chart/townsquare/`](chart/townsquare/) and uses the
+[bitnami/common](https://github.com/bitnami/charts/tree/main/bitnami/common)
+library chart for labels, names, images, and other helpers.
+
+```bash
+# Fetch the bitnami/common dependency
+helm dependency update chart/townsquare
+
+# Deploy
+helm install townsquare chart/townsquare \
+  --set frontend.image.repository=townsquare-frontend \
+  --set frontend.image.tag=latest \
+  --set backend.image.repository=townsquare-backend \
+  --set backend.image.tag=latest \
+  --set ingress.enabled=true \
+  --set ingress.hostname=townsquare.example.com
+```
+
+### Architecture
+
+```
+                    Ingress (TLS termination)
+                           |
+                    +------+------+
+                    |             |
+              / (frontend)   /ws (backend)
+                    |             |
+              +-----------+ +-----------+
+              |  nginx    | |  Node.js  |
+              |  (SPA)    | |  (WS)     |
+              +-----------+ +-----------+
+```
+
+- The **frontend** is nginx serving static files. A `runtime-config.js` file is
+  injected via ConfigMap so the frontend knows where the WebSocket backend is —
+  no rebuild required when changing the URL.
+- The **backend** runs in plain HTTP mode by default (`USE_TLS=false`) since TLS
+  terminates at the ingress. Metrics are available at `/metrics`.
+- The **ingress** routes `/ws` to the backend and everything else to the frontend.
+
+### Key configuration values
+
+| Value                            | Default | Description                                               |
+| -------------------------------- | ------- | --------------------------------------------------------- |
+| `frontend.runtimeConfig.wsUrl`   | `""`    | WebSocket URL. Empty = auto-derive from `window.location` |
+| `backend.server.useTls`          | `false` | Enable TLS inside the container                           |
+| `backend.server.allowedOrigins`  | `""`    | Regex for WebSocket origin whitelist                      |
+| `ingress.enabled`                | `false` | Enable ingress with `/ws` routing                         |
+| `metrics.enabled`                | `false` | Expose Prometheus metrics endpoint                        |
+| `metrics.serviceMonitor.enabled` | `false` | Create ServiceMonitor for Prometheus Operator             |
+
+See [chart/townsquare/values.yaml](chart/townsquare/values.yaml) for the full list
+of configuration options. The chart follows bitnami conventions — every pod
+supports `extraVolumes`, `extraVolumeMounts`, `sidecars`, `initContainers`,
+`affinity`, `tolerations`, `topologySpreadConstraints`, etc.
+
+### Code changes in this fork
+
+The following minimal, backward-compatible changes were made to support
+containerisation:
+
+- **`server/index.js`**: Added `USE_TLS`, `SERVER_PORT`/`PORT`,
+  `ALLOWED_ORIGINS`, `CERT_FILE`, `KEY_FILE` env vars. The server now creates
+  an HTTP server when `USE_TLS=false` (default for containers). Metrics are
+  served only at `/metrics` instead of all paths. Original behaviour is
+  preserved when env vars are unset.
+- **`src/store/socket.js`**: The WebSocket URL is now read from
+  `window.RUNTIME_CONFIG.wsUrl` (injected at deploy time), with fallback to
+  auto-derivation from `window.location`. The hardcoded URL remains as the
+  last-resort default.
+- **`public/runtime-config.js`** (new): Placeholder config file overridden via
+  ConfigMap at deploy time.
+- **`public/index.html`**: Loads `runtime-config.js` before the app bundle.
+
 ## Acknowledgements and Copyrights
 
-* [Blood on the Clocktower](https://bloodontheclocktower.com/) is a trademark of Steven Medway and [The Pandemonium Institute](https://www.thepandemoniuminstitute.com/)
-* Night reminders and other auxiliary text written by [Ben Finney](http://bignose.whitetree.org/projects/botc/diy/)
-* Iconography by [Font Awesome](https://fontawesome.com/)
-* Background image copyright and permission granted by [Ryan Maloney](https://www.artstation.com/maloney94)
-* Webfonts by [Google Fonts](https://fonts.google.com/) and [Online Web Fonts](https://www.onlinewebfonts.com/)
-* All other images and icons are copyright to their respective owners
+- [Blood on the Clocktower](https://bloodontheclocktower.com/) is a trademark of Steven Medway and [The Pandemonium Institute](https://www.thepandemoniuminstitute.com/)
+- Night reminders and other auxiliary text written by [Ben Finney](http://bignose.whitetree.org/projects/botc/diy/)
+- Iconography by [Font Awesome](https://fontawesome.com/)
+- Background image copyright and permission granted by [Ryan Maloney](https://www.artstation.com/maloney94)
+- Webfonts by [Google Fonts](https://fonts.google.com/) and [Online Web Fonts](https://www.onlinewebfonts.com/)
+- All other images and icons are copyright to their respective owners
 
 This project and its website are provided free of charge and not affiliated with The Pandemonium Institute in any way.
 
 ## Donations
+
 This project will always be available free of charge, since I love building cool things and playing Blood on the Clocktower. If you still want to support me with a donation, you can do that here:
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/bra1n)

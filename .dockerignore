@@ -1,0 +1,13 @@
+.git
+.github
+.idea
+node_modules
+dist
+server/node_modules
+*.tgz
+*.pem
+Dockerfile
+.dockerignore
+chart
+AGENTS.md
+CHANGELOG.md

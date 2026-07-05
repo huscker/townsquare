@@ -1,0 +1,20 @@
+apiVersion: v2
+name: townsquare
+description: Blood on the Clocktower Town Square - Helm chart for Kubernetes deployment
+type: application
+version: 1.0.0
+appVersion: "2.16.2"
+home: https://github.com/bra1n/townsquare
+sources:
+  - https://github.com/bra1n/townsquare
+keywords:
+  - botc
+  - townsquare
+  - clocktower
+  - game
+maintainers:
+  - name: townsquare fork maintainers
+dependencies:
+  - name: common
+    repository: https://charts.bitnami.com/bitnami
+    version: 2.x.x
