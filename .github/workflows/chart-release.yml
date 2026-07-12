@@ -50,6 +50,18 @@ jobs:
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
 
+      - name: Regenerate index from all releases
+        run: |
+          owner=$(cut -d '/' -f 1 <<< "$GITHUB_REPOSITORY")
+          repo=$(cut -d '/' -f 2 <<< "$GITHUB_REPOSITORY")
+          cr index \
+            --owner "$owner" \
+            --git-repo "$repo" \
+            --token "${{ secrets.GITHUB_TOKEN }}" \
+            --index-path .cr-index/index.yaml \
+            --push \
+            --pages-branch gh-pages
+
       - name: Ensure ArtifactHub metadata on gh-pages
         run: |
           git fetch origin gh-pages

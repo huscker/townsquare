@@ -2,7 +2,7 @@ apiVersion: v2
 name: townsquare
 description: Blood on the Clocktower Town Square - Helm chart for Kubernetes deployment
 type: application
-version: 1.0.0
+version: 1.0.1
 appVersion: "2.15.2"
 home: https://github.com/huscker/townsquare
 sources:
