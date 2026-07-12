@@ -1,33 +1,12 @@
 # Release Notes
 
-### Version 2.16.8
-- simplified locale-aware role name/ability lookup to dynamic key pattern
-
----
-
-### Version 2.16.7
-- translated role names and ability descriptions to Russian in the reference sheet, night order, and on tokens
-- default language for cluster deployment set to Russian
-
----
-
-### Version 2.16.6
+### Version 2.17.0
 - added English/Russian language support with in-app switcher (Grimoire tab)
-- default language configurable via `frontend.runtimeConfig.defaultLanguage` Helm value or `RUNTIME_CONFIG.defaultLanguage`; falls back to localStorage preference then English
-- added Helm chart README for ArtifactHub with configuration reference
-- added changelog link in ArtifactHub chart annotations
-
----
-
-### Version 2.16.5
-- "Sync state to players" now also syncs reminder tokens to all connected players
-- added confirmation dialogs to "Clear reminders" and "Sync state to players" to prevent accidental clicks
-
----
-
-### Version 2.16.4
+- Russian translations for all role names and ability descriptions in reference sheet, night order, and on tokens
+- default language configurable via `frontend.runtimeConfig.defaultLanguage` Helm value; falls back to localStorage then English
 - added "Clear reminders" button in Characters tab (ST only) — clears all reminder tokens for all connected players
-- added "Sync state to players" button in Characters tab (ST only) — pushes full grimoire state (roles + gamestate) to all connected players at once
+- added "Sync state to players" button in Characters tab (ST only) — pushes full grimoire state (roles, reminders, gamestate) to all connected players at once
+- added Helm chart README for ArtifactHub with configuration reference and changelog link
 
 ---
 
