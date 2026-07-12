@@ -188,6 +188,13 @@
             Clear reminders
             <em><font-awesome-icon icon="times-circle" /></em>
           </li>
+          <li
+            @click="syncState"
+            v-if="!session.isSpectator && session.sessionId"
+          >
+            Sync state to players
+            <em><font-awesome-icon icon="sync" /></em>
+          </li>
         </template>
 
         <template v-if="tab === 'help'">
@@ -344,6 +351,9 @@ export default {
       if (confirm("Clear all reminder tokens for all players?")) {
         this.$store.commit("players/clearReminders");
       }
+    },
+    syncState() {
+      this.$store.commit("session/syncState");
     },
     toggleNight() {
       this.$store.commit("toggleNight");

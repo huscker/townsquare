@@ -869,6 +869,18 @@ class LiveSession {
     if (this._isSpectator) return;
     this._send("clearReminders");
   }
+
+  /**
+   * Broadcast full state to all spectators: gamestate + every player's current role. ST only
+   */
+  sendFullSync() {
+    if (this._isSpectator) return;
+    this.sendGamestate();
+    this._store.state.players.players.forEach((player, index) => {
+      const roleId = player.role && player.role.id ? player.role.id : "";
+      this._send("player", { index, property: "role", value: roleId });
+    });
+  }
 }
 
 export default (store) => {
@@ -939,6 +951,9 @@ export default (store) => {
         break;
       case "players/clearReminders":
         session.sendClearReminders();
+        break;
+      case "session/syncState":
+        session.sendFullSync();
         break;
       case "players/set":
       case "players/clear":

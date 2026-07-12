@@ -5,6 +5,7 @@
 - fixed reminder tokens persisting across sessions when a player joins a new game
 - "Remove all" in Characters tab now clears reminder tokens on all connected players
 - added "Clear reminders" button in Characters tab (ST only) to clear all reminder tokens without removing roles
+- added "Sync state to players" button in Characters tab (ST only) to push full grimoire state (roles + gamestate) to all connected players
 
 ---
 
