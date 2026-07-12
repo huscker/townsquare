@@ -24,6 +24,19 @@ jobs:
           git config user.name "$GITHUB_ACTOR"
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
 
+      - name: Ensure gh-pages branch exists
+        run: |
+          git fetch origin gh-pages 2>/dev/null || true
+          if ! git show-ref --quiet refs/remotes/origin/gh-pages; then
+            git checkout --orphan gh-pages
+            git rm -rf . --quiet
+            touch index.yaml
+            git add index.yaml
+            git commit -m "Initialize gh-pages branch"
+            git push origin gh-pages
+            git checkout -
+          fi
+
       - name: Install Helm
         uses: azure/setup-helm@v4
 
@@ -39,13 +52,8 @@ jobs:
 
       - name: Ensure ArtifactHub metadata on gh-pages
         run: |
-          git fetch origin gh-pages 2>/dev/null || true
-          if git show-ref --quiet refs/remotes/origin/gh-pages; then
-            git checkout gh-pages
-          else
-            git checkout --orphan gh-pages
-            git rm -rf . --quiet
-          fi
+          git fetch origin gh-pages
+          git checkout gh-pages
           if [ ! -f artifacthub-repo.yml ]; then
             cat > artifacthub-repo.yml << 'EOF'
           owners:
