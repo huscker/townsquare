@@ -3,7 +3,7 @@ name: townsquare
 description: Blood on the Clocktower Town Square - Helm chart for Kubernetes deployment
 type: application
 version: 1.0.3
-appVersion: "2.16.7"
+appVersion: "2.16.8"
 home: https://github.com/huscker/townsquare
 sources:
   - https://github.com/huscker/townsquare

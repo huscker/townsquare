@@ -1,5 +1,10 @@
 # Release Notes
 
+### Version 2.16.8
+- simplified locale-aware role name/ability lookup to dynamic key pattern
+
+---
+
 ### Version 2.16.7
 - translated role names and ability descriptions to Russian in the reference sheet, night order, and on tokens
 - default language for cluster deployment set to Russian
