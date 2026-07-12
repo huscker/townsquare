@@ -17,6 +17,45 @@ entries:
           url: https://github.com/huscker/townsquare/issues
     apiVersion: v2
     appVersion: 2.15.2
+    created: "2026-07-12T10:56:37.197368813Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      version: 2.x.x
+    description: Blood on the Clocktower Town Square - Helm chart for Kubernetes deployment
+    digest: 11b2ea878cdd672f6c1327eee800961c21dee68c3aca6bec0af3cf707bca3d88
+    home: https://github.com/huscker/townsquare
+    keywords:
+    - botc
+    - townsquare
+    - clocktower
+    - game
+    maintainers:
+    - email: egorgolubev@bulltrade.org
+      name: huscker
+    name: townsquare
+    sources:
+    - https://github.com/huscker/townsquare
+    type: application
+    urls:
+    - townsquare-1.0.2.tgz
+    version: 1.0.2
+  - annotations:
+      artifacthub.io/changes: |
+        - Initial Helm chart release
+      artifacthub.io/images: |
+        - name: townsquare-frontend
+          image: ghcr.io/huscker/townsquare-frontend:2.15.2
+        - name: townsquare-backend
+          image: ghcr.io/huscker/townsquare-backend:2.15.2
+      artifacthub.io/license: GPL-3.0
+      artifacthub.io/links: |
+        - name: source
+          url: https://github.com/huscker/townsquare
+        - name: support
+          url: https://github.com/huscker/townsquare/issues
+    apiVersion: v2
+    appVersion: 2.15.2
     created: "2026-07-12T09:16:40.063801657Z"
     dependencies:
     - name: common
@@ -79,4 +118,4 @@ entries:
     urls:
     - https://github.com/huscker/townsquare/releases/download/townsquare-1.0.0/townsquare-1.0.0.tgz
     version: 1.0.0
-generated: "2026-07-12T09:16:40.212448084Z"
+generated: "2026-07-12T10:56:37.197386817Z"
