@@ -51,22 +51,49 @@ jobs:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
 
       - name: Regenerate index from all releases
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          CR_BIN=$(find /opt/hostedtoolcache/cr -type f -name cr | head -1)
-          if [ -z "$CR_BIN" ]; then
-            curl -sSL https://github.com/helm/chart-releaser/releases/download/v1.6.1/chart-releaser_1.6.1_linux_amd64.tar.gz \
-              | tar -xz -C /usr/local/bin cr
-            CR_BIN=/usr/local/bin/cr
-          fi
           owner=$(cut -d '/' -f 1 <<< "$GITHUB_REPOSITORY")
           repo=$(cut -d '/' -f 2 <<< "$GITHUB_REPOSITORY")
-          "$CR_BIN" index \
-            --owner "$owner" \
-            --git-repo "$repo" \
-            --token "${{ secrets.GITHUB_TOKEN }}" \
-            --index-path .cr-index/index.yaml \
-            --push \
-            --pages-branch gh-pages
+
+          releases=$(curl -s \
+            -H "Authorization: token ${GH_TOKEN}" \
+            "https://api.github.com/repos/${owner}/${repo}/releases")
+
+          WORKDIR=$(mktemp -d)
+
+          while IFS=$'\t' read -r tag url; do
+            dir="${WORKDIR}/${tag}"
+            mkdir -p "${dir}"
+            curl -sL "${url}" -o "${dir}/$(basename "${url}")"
+          done < <(python3 -c "
+import sys, json
+for r in json.loads(sys.stdin.read()):
+    for a in r.get('assets', []):
+        if a['name'].endswith('.tgz'):
+            print(r['tag_name'] + '\t' + a['browser_download_url'])
+" <<< "${releases}")
+
+          INDEX_FILE="${WORKDIR}/merged-index.yaml"
+          for tag_dir in "${WORKDIR}"/*/; do
+            tag=$(basename "${tag_dir}")
+            url="https://github.com/${owner}/${repo}/releases/download/${tag}"
+            if [ -f "${INDEX_FILE}" ]; then
+              helm repo index "${tag_dir}" --url "${url}" --merge "${INDEX_FILE}"
+            else
+              helm repo index "${tag_dir}" --url "${url}"
+            fi
+            cp "${tag_dir}/index.yaml" "${INDEX_FILE}"
+          done
+
+          git fetch origin gh-pages
+          git checkout gh-pages
+          cp "${INDEX_FILE}" index.yaml
+          git add index.yaml
+          git diff --staged --quiet || git commit -m "Update Helm chart index"
+          git push origin gh-pages
+          git checkout "${GITHUB_REF_NAME}"
 
       - name: Ensure ArtifactHub metadata on gh-pages
         run: |
