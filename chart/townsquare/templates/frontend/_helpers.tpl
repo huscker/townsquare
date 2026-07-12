@@ -11,7 +11,10 @@ Return the runtime-config.js content generated from values.
 {{- define "townsquare.frontend.runtimeConfig" -}}
 window.RUNTIME_CONFIG = {
   {{- if .Values.frontend.runtimeConfig.wsUrl }}
-  wsUrl: {{ .Values.frontend.runtimeConfig.wsUrl | quote }}
+  wsUrl: {{ .Values.frontend.runtimeConfig.wsUrl | quote }},
+  {{- end }}
+  {{- if .Values.frontend.runtimeConfig.defaultLanguage }}
+  defaultLanguage: {{ .Values.frontend.runtimeConfig.defaultLanguage | quote }},
   {{- end }}
 };
 {{- end -}}

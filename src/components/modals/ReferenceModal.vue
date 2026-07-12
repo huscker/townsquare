@@ -8,12 +8,12 @@
       @click="toggleModal('nightOrder')"
       icon="cloud-moon"
       class="toggle"
-      title="Show Night Order"
+      :title="$t('modals.reference.showNightOrder')"
     />
     <h3>
-      Character Reference
+      {{ $t("modals.reference.title") }}
       <font-awesome-icon icon="address-card" />
-      {{ edition.name || "Custom Script" }}
+      {{ edition.name || $t("modals.reference.customScript") }}
     </h3>
     <div
       v-for="(teamRoles, team) in rolesGrouped"
@@ -32,10 +32,12 @@
               backgroundImage: `url(${
                 role.image && grimoire.isImageOptIn
                   ? role.image
-                  : require('../../assets/icons/' +
-                      (role.imageAlt || role.id) +
-                      '.png')
-              })`
+                  : require(
+                      '../../assets/icons/' +
+                        (role.imageAlt || role.id) +
+                        '.png',
+                    )
+              })`,
             }"
           ></span>
           <div class="role">
@@ -53,24 +55,24 @@
 
     <div class="team jinxed" v-if="jinxed.length">
       <aside>
-        <h4>Jinxed</h4>
+        <h4>{{ $t("modals.reference.jinxed") }}</h4>
       </aside>
       <ul>
         <li v-for="(jinx, index) in jinxed" :key="index">
           <span
             class="icon"
             :style="{
-              backgroundImage: `url(${require('../../assets/icons/' +
-                jinx.first.id +
-                '.png')})`
+              backgroundImage: `url(${require(
+                '../../assets/icons/' + jinx.first.id + '.png',
+              )})`,
             }"
           ></span>
           <span
             class="icon"
             :style="{
-              backgroundImage: `url(${require('../../assets/icons/' +
-                jinx.second.id +
-                '.png')})`
+              backgroundImage: `url(${require(
+                '../../assets/icons/' + jinx.second.id + '.png',
+              )})`,
             }"
           ></span>
           <div class="role">
@@ -93,23 +95,23 @@ import { mapMutations, mapState } from "vuex";
 
 export default {
   components: {
-    Modal
+    Modal,
   },
   computed: {
     /**
      * Return a list of jinxes in the form of role IDs and a reason
      * @returns {*[]} [{first, second, reason}]
      */
-    jinxed: function() {
+    jinxed: function () {
       const jinxed = [];
-      this.roles.forEach(role => {
+      this.roles.forEach((role) => {
         if (this.jinxes.get(role.id)) {
           this.jinxes.get(role.id).forEach((reason, second) => {
             if (this.roles.get(second)) {
               jinxed.push({
                 first: role,
                 second: this.roles.get(second),
-                reason
+                reason,
               });
             }
           });
@@ -117,9 +119,9 @@ export default {
       });
       return jinxed;
     },
-    rolesGrouped: function() {
+    rolesGrouped: function () {
       const rolesGrouped = {};
-      this.roles.forEach(role => {
+      this.roles.forEach((role) => {
         if (!rolesGrouped[role.team]) {
           rolesGrouped[role.team] = [];
         }
@@ -128,7 +130,7 @@ export default {
       delete rolesGrouped["traveler"];
       return rolesGrouped;
     },
-    playersByRole: function() {
+    playersByRole: function () {
       const players = {};
       this.players.forEach(({ name, role }) => {
         if (role && role.id && role.team !== "traveler") {
@@ -141,11 +143,11 @@ export default {
       return players;
     },
     ...mapState(["roles", "modals", "edition", "grimoire", "jinxes"]),
-    ...mapState("players", ["players"])
+    ...mapState("players", ["players"]),
   },
   methods: {
-    ...mapMutations(["toggleModal"])
-  }
+    ...mapMutations(["toggleModal"]),
+  },
 };
 </script>
 

@@ -8,16 +8,16 @@
       @click="toggleModal('reference')"
       icon="address-card"
       class="toggle"
-      title="Show Character Reference"
+      :title="$t('modals.nightOrder.showReference')"
     />
     <h3>
-      Night Order
+      {{ $t("modals.nightOrder.title") }}
       <font-awesome-icon icon="cloud-moon" />
-      {{ edition.name || "Custom Script" }}
+      {{ edition.name || $t("modals.nightOrder.customScript") }}
     </h3>
     <div class="night">
       <ul class="first">
-        <li class="headline">First Night</li>
+        <li class="headline">{{ $t("modals.nightOrder.firstNight") }}</li>
         <li
           v-for="role in rolesFirstNight"
           :key="role.name"
@@ -44,10 +44,12 @@
               backgroundImage: `url(${
                 role.image && grimoire.isImageOptIn
                   ? role.image
-                  : require('../../assets/icons/' +
-                      (role.imageAlt || role.id) +
-                      '.png')
-              })`
+                  : require(
+                      '../../assets/icons/' +
+                        (role.imageAlt || role.id) +
+                        '.png',
+                    )
+              })`,
             }"
           ></span>
           <span class="reminder" v-if="role.firstNightReminder">
@@ -56,7 +58,7 @@
         </li>
       </ul>
       <ul class="other">
-        <li class="headline">Other Nights</li>
+        <li class="headline">{{ $t("modals.nightOrder.otherNights") }}</li>
         <li
           v-for="role in rolesOtherNight"
           :key="role.name"
@@ -69,10 +71,12 @@
               backgroundImage: `url(${
                 role.image && grimoire.isImageOptIn
                   ? role.image
-                  : require('../../assets/icons/' +
-                      (role.imageAlt || role.id) +
-                      '.png')
-              })`
+                  : require(
+                      '../../assets/icons/' +
+                        (role.imageAlt || role.id) +
+                        '.png',
+                    )
+              })`,
             }"
           ></span>
           <span class="name">
@@ -104,73 +108,68 @@ import { mapMutations, mapState } from "vuex";
 
 export default {
   components: {
-    Modal
+    Modal,
   },
   computed: {
-    rolesFirstNight: function() {
+    rolesFirstNight: function () {
       const rolesFirstNight = [];
       // add minion / demon infos to night order sheet
       if (this.players.length > 6) {
         rolesFirstNight.push(
           {
             id: "evil",
-            name: "Minion info",
+            name: this.$t("modals.nightOrder.minionInfo"),
             firstNight: 5,
             team: "minion",
-            players: this.players.filter(p => p.role.team === "minion"),
-            firstNightReminder:
-              "• If more than one Minion, they all make eye contact with each other. " +
-              "• Show the “This is the Demon” card. Point to the Demon."
+            players: this.players.filter((p) => p.role.team === "minion"),
+            firstNightReminder: this.$t("modals.nightOrder.minionInfoText"),
           },
           {
             id: "evil",
-            name: "Demon info & bluffs",
+            name: this.$t("modals.nightOrder.demonInfo"),
             firstNight: 8,
             team: "demon",
-            players: this.players.filter(p => p.role.team === "demon"),
-            firstNightReminder:
-              "• Show the “These are your minions” card. Point to each Minion. " +
-              "• Show the “These characters are not in play” card. Show 3 character tokens of good " +
-              "characters not in play."
-          }
+            players: this.players.filter((p) => p.role.team === "demon"),
+            firstNightReminder: this.$t("modals.nightOrder.demonInfoText"),
+          },
         );
       }
-      this.roles.forEach(role => {
-        const players = this.players.filter(p => p.role.id === role.id);
+      this.roles.forEach((role) => {
+        const players = this.players.filter((p) => p.role.id === role.id);
         if (role.firstNight && (role.team !== "traveler" || players.length)) {
           rolesFirstNight.push(Object.assign({ players }, role));
         }
       });
       this.fabled
         .filter(({ firstNight }) => firstNight)
-        .forEach(fabled => {
+        .forEach((fabled) => {
           rolesFirstNight.push(Object.assign({ players: [] }, fabled));
         });
       rolesFirstNight.sort((a, b) => a.firstNight - b.firstNight);
       return rolesFirstNight;
     },
-    rolesOtherNight: function() {
+    rolesOtherNight: function () {
       const rolesOtherNight = [];
-      this.roles.forEach(role => {
-        const players = this.players.filter(p => p.role.id === role.id);
+      this.roles.forEach((role) => {
+        const players = this.players.filter((p) => p.role.id === role.id);
         if (role.otherNight && (role.team !== "traveler" || players.length)) {
           rolesOtherNight.push(Object.assign({ players }, role));
         }
       });
       this.fabled
         .filter(({ otherNight }) => otherNight)
-        .forEach(fabled => {
+        .forEach((fabled) => {
           rolesOtherNight.push(Object.assign({ players: [] }, fabled));
         });
       rolesOtherNight.sort((a, b) => a.otherNight - b.otherNight);
       return rolesOtherNight;
     },
     ...mapState(["roles", "modals", "edition", "grimoire"]),
-    ...mapState("players", ["players", "fabled"])
+    ...mapState("players", ["players", "fabled"]),
   },
   methods: {
-    ...mapMutations(["toggleModal"])
-  }
+    ...mapMutations(["toggleModal"]),
+  },
 };
 </script>
 

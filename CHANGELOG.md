@@ -1,5 +1,13 @@
 # Release Notes
 
+### Version 2.16.6
+- added English/Russian language support with in-app switcher (Grimoire tab)
+- default language configurable via `frontend.runtimeConfig.defaultLanguage` Helm value or `RUNTIME_CONFIG.defaultLanguage`; falls back to localStorage preference then English
+- added Helm chart README for ArtifactHub with configuration reference
+- added changelog link in ArtifactHub chart annotations
+
+---
+
 ### Version 2.16.5
 - "Sync state to players" now also syncs reminder tokens to all connected players
 - added confirmation dialogs to "Clear reminders" and "Sync state to players" to prevent accidental clicks

@@ -205,6 +205,9 @@ frontend:
     ## @param frontend.runtimeConfig.wsUrl WebSocket backend URL for the frontend to connect to.
     ## If empty, the frontend derives it from window.location (wss://host/ws/).
     wsUrl: ""
+    ## @param frontend.runtimeConfig.defaultLanguage Default UI language. Supported: "en", "ru".
+    ## If empty, falls back to localStorage preference or "en".
+    defaultLanguage: ""
 
   ## @param frontend.nginxConfig Override the nginx server block config (multiline string).
   ## When set, a ConfigMap is created and mounted over the baked-in default.conf

@@ -1,16 +1,16 @@
 <template>
   <Modal class="editions" v-if="modals.edition" @close="toggleModal('edition')">
     <div v-if="!isCustom">
-      <h3>Select an edition:</h3>
+      <h3>{{ $t("modals.edition.selectEdition") }}</h3>
       <ul class="editions">
         <li
           v-for="edition in editions"
           class="edition"
           :class="['edition-' + edition.id]"
           :style="{
-            backgroundImage: `url(${require('../../assets/editions/' +
-              edition.id +
-              '.png')})`
+            backgroundImage: `url(${require(
+              '../../assets/editions/' + edition.id + '.png',
+            )})`,
           }"
           :key="edition.id"
           @click="setEdition(edition)"
@@ -21,32 +21,29 @@
           class="edition edition-custom"
           @click="isCustom = true"
           :style="{
-            backgroundImage: `url(${require('../../assets/editions/custom.png')})`
+            backgroundImage: `url(${require('../../assets/editions/custom.png')})`,
           }"
         >
-          Custom Script / Characters
+          {{ $t("modals.edition.customScript") }}
         </li>
       </ul>
     </div>
     <div class="custom" v-else>
-      <h3>Load custom script / characters</h3>
-      To play with a custom script, you need to select the characters you want
-      to play with in the official
-      <a href="https://script.bloodontheclocktower.com/" target="_blank"
-        >Script Tool</a
-      >
-      and then upload the generated "custom-list.json" either directly here or
-      provide a URL to such a hosted JSON file.<br />
+      <h3>{{ $t("modals.edition.loadCustomScript") }}</h3>
+      {{ $t("modals.edition.instructions") }}
+      <a href="https://script.bloodontheclocktower.com/" target="_blank">{{
+        $t("modals.edition.scriptToolLink")
+      }}</a
+      ><br />
       <br />
-      To play with custom characters, please read
+      {{ $t("modals.edition.customCharsInstructions") }}
       <a
         href="https://github.com/bra1n/townsquare#custom-characters"
         target="_blank"
-        >the documentation</a
+        >{{ $t("modals.edition.customCharsLink") }}</a
       >
-      on how to write a custom character definition file.
-      <b>Only load custom JSON files from sources that you trust!</b>
-      <h3>Some popular custom scripts:</h3>
+      <b>{{ $t("modals.edition.warning") }}</b>
+      <h3>{{ $t("modals.edition.popularScripts") }}</h3>
       <ul class="scripts">
         <li
           v-for="(script, index) in scripts"
@@ -64,16 +61,18 @@
       />
       <div class="button-group">
         <div class="button" @click="openUpload">
-          <font-awesome-icon icon="file-upload" /> Upload JSON
+          <font-awesome-icon icon="file-upload" />
+          {{ $t("modals.edition.uploadJson") }}
         </div>
         <div class="button" @click="promptURL">
-          <font-awesome-icon icon="link" /> Enter URL
+          <font-awesome-icon icon="link" /> {{ $t("modals.edition.enterUrl") }}
         </div>
         <div class="button" @click="readFromClipboard">
-          <font-awesome-icon icon="clipboard" /> Use JSON from Clipboard
+          <font-awesome-icon icon="clipboard" />
+          {{ $t("modals.edition.useClipboard") }}
         </div>
         <div class="button" @click="isCustom = false">
-          <font-awesome-icon icon="undo" /> Back
+          <font-awesome-icon icon="undo" /> {{ $t("modals.edition.back") }}
         </div>
       </div>
     </div>
@@ -87,38 +86,38 @@ import Modal from "./Modal";
 
 export default {
   components: {
-    Modal
+    Modal,
   },
-  data: function() {
+  data: function () {
     return {
       editions: editionJSON,
       isCustom: false,
       scripts: [
         [
           "Deadly Penance Day",
-          "https://gist.githubusercontent.com/bra1n/0337cc44c6fd2c44f7589256ed5486d2/raw/16be38fa3c01aaf49827303ac80577bdb52c0b25/penanceday.json"
+          "https://gist.githubusercontent.com/bra1n/0337cc44c6fd2c44f7589256ed5486d2/raw/16be38fa3c01aaf49827303ac80577bdb52c0b25/penanceday.json",
         ],
         [
           "Catfishing 11.1",
-          "https://gist.githubusercontent.com/bra1n/8a5ec41a7bbf945f6b7dfc1cef72b569/raw/a312ab93c2f302e0ef83c8b65a4e8e82760fda3a/catfishing.json"
+          "https://gist.githubusercontent.com/bra1n/8a5ec41a7bbf945f6b7dfc1cef72b569/raw/a312ab93c2f302e0ef83c8b65a4e8e82760fda3a/catfishing.json",
         ],
         [
           "On Thin Ice (Teensyville)",
-          "https://gist.githubusercontent.com/bra1n/8dacd9f2abc6f428331ea1213ab153f5/raw/0cacbcaf8ed9bddae0cca25a9ada97e9958d868b/on-thin-ice.json"
+          "https://gist.githubusercontent.com/bra1n/8dacd9f2abc6f428331ea1213ab153f5/raw/0cacbcaf8ed9bddae0cca25a9ada97e9958d868b/on-thin-ice.json",
         ],
         [
           "Race To The Bottom (Teensyville)",
-          "https://gist.githubusercontent.com/bra1n/63e1354cb3dc9d4032bcd0623dc48888/raw/5acb0eedcc0a67a64a99c7e0e6271de0b7b2e1b2/race-to-the-bottom.json"
+          "https://gist.githubusercontent.com/bra1n/63e1354cb3dc9d4032bcd0623dc48888/raw/5acb0eedcc0a67a64a99c7e0e6271de0b7b2e1b2/race-to-the-bottom.json",
         ],
         [
           "Frankenstein's Mayor by Ted (Teensyville)",
-          "https://gist.githubusercontent.com/bra1n/32c52b422cc01b934a4291eeb81dbcee/raw/5bf770693bbf7aff5e86601c82ca4af3222f4ba6/Frankensteins_Mayor_by_Ted.json"
+          "https://gist.githubusercontent.com/bra1n/32c52b422cc01b934a4291eeb81dbcee/raw/5bf770693bbf7aff5e86601c82ca4af3222f4ba6/Frankensteins_Mayor_by_Ted.json",
         ],
         [
           "Vigormortis High School (Teensyville)",
-          "https://gist.githubusercontent.com/bra1n/1f65bd4a999524719d5dabe98c3c2d27/raw/22bbec6bf56a51a7459e5ae41ed47e41971c5445/VigormortisHighSchool.json"
-        ]
-      ]
+          "https://gist.githubusercontent.com/bra1n/1f65bd4a999524719d5dabe98c3c2d27/raw/22bbec6bf56a51a7459e5ae41ed47e41971c5445/VigormortisHighSchool.json",
+        ],
+      ],
     };
   },
   computed: mapState(["modals"]),
@@ -135,7 +134,7 @@ export default {
             const roles = JSON.parse(reader.result);
             this.parseRoles(roles);
           } catch (e) {
-            alert("Error reading custom script: " + e.message);
+            alert(this.$t("modals.edition.errors.reading") + e.message);
           }
           this.$refs.upload.value = "";
         });
@@ -143,7 +142,7 @@ export default {
       }
     },
     promptURL() {
-      const url = prompt("Enter URL to a custom-script.json file");
+      const url = prompt(this.$t("modals.edition.prompts.enterUrl"));
       if (url) {
         this.handleURL(url);
       }
@@ -155,7 +154,7 @@ export default {
           const script = await res.json();
           this.parseRoles(script);
         } catch (e) {
-          alert("Error loading custom script: " + e.message);
+          alert(this.$t("modals.edition.errors.loading") + e.message);
         }
       }
     },
@@ -165,12 +164,14 @@ export default {
         const roles = JSON.parse(text);
         this.parseRoles(roles);
       } catch (e) {
-        alert("Error reading custom script: " + e.message);
+        alert(this.$t("modals.edition.errors.reading") + e.message);
       }
     },
     parseRoles(roles) {
       if (!roles || !roles.length) return;
-      roles = roles.map(role => typeof role === "string" ? { id: role } : role);
+      roles = roles.map((role) =>
+        typeof role === "string" ? { id: role } : role,
+      );
       const metaIndex = roles.findIndex(({ id }) => id === "_meta");
       let meta = {};
       if (metaIndex > -1) {
@@ -179,7 +180,7 @@ export default {
       this.$store.commit("setCustomRoles", roles);
       this.$store.commit(
         "setEdition",
-        Object.assign({}, meta, { id: "custom" })
+        Object.assign({}, meta, { id: "custom" }),
       );
       // check for fabled and set those too, if present
       if (roles.some((role) => this.$store.state.fabled.has(role.id || role))) {
@@ -193,8 +194,8 @@ export default {
       }
       this.isCustom = false;
     },
-    ...mapMutations(["toggleModal", "setEdition"])
-  }
+    ...mapMutations(["toggleModal", "setEdition"]),
+  },
 };
 </script>
 
@@ -210,8 +211,12 @@ ul.editions .edition {
   width: 30%;
   margin: 5px;
   font-size: 120%;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000, 0 0 5px rgba(0, 0, 0, 0.75);
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000,
+    0 0 5px rgba(0, 0, 0, 0.75);
   cursor: pointer;
   &:hover {
     color: red;
