@@ -80,7 +80,6 @@ const actions = {
         return player;
       });
     } else {
-      commit("clearReminders");
       players = state.players.map(({ name, id, pronouns }) => ({
         ...NEWPLAYER,
         name,

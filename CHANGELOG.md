@@ -1,11 +1,14 @@
 # Release Notes
 
+### Version 2.16.4
+- added "Clear reminders" button in Characters tab (ST only) — clears all reminder tokens for all connected players
+- added "Sync state to players" button in Characters tab (ST only) — pushes full grimoire state (roles + gamestate) to all connected players at once
+
+---
+
 ### Version 2.16.3
 - fixed WebSocket connections being rejected in production (ALLOWED_ORIGINS now configurable via Helm values)
 - fixed reminder tokens persisting across sessions when a player joins a new game
-- "Remove all" in Characters tab now clears reminder tokens on all connected players
-- added "Clear reminders" button in Characters tab (ST only) to clear all reminder tokens without removing roles
-- added "Sync state to players" button in Characters tab (ST only) to push full grimoire state (roles + gamestate) to all connected players
 
 ---
 
