@@ -47,53 +47,9 @@ jobs:
         uses: helm/chart-releaser-action@v1.6.0
         with:
           charts_dir: chart
+          packages_with_index: true
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-
-      - name: Regenerate index from all releases
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          owner=$(cut -d '/' -f 1 <<< "$GITHUB_REPOSITORY")
-          repo=$(cut -d '/' -f 2 <<< "$GITHUB_REPOSITORY")
-
-          releases=$(curl -s \
-            -H "Authorization: token ${GH_TOKEN}" \
-            "https://api.github.com/repos/${owner}/${repo}/releases")
-
-          WORKDIR=$(mktemp -d)
-
-          while IFS=$'\t' read -r tag url; do
-            dir="${WORKDIR}/${tag}"
-            mkdir -p "${dir}"
-            curl -sL "${url}" -o "${dir}/$(basename "${url}")"
-          done < <(python3 -c "
-import sys, json
-for r in json.loads(sys.stdin.read()):
-    for a in r.get('assets', []):
-        if a['name'].endswith('.tgz'):
-            print(r['tag_name'] + '\t' + a['browser_download_url'])
-" <<< "${releases}")
-
-          INDEX_FILE="${WORKDIR}/merged-index.yaml"
-          for tag_dir in "${WORKDIR}"/*/; do
-            tag=$(basename "${tag_dir}")
-            url="https://github.com/${owner}/${repo}/releases/download/${tag}"
-            if [ -f "${INDEX_FILE}" ]; then
-              helm repo index "${tag_dir}" --url "${url}" --merge "${INDEX_FILE}"
-            else
-              helm repo index "${tag_dir}" --url "${url}"
-            fi
-            cp "${tag_dir}/index.yaml" "${INDEX_FILE}"
-          done
-
-          git fetch origin gh-pages
-          git checkout gh-pages
-          cp "${INDEX_FILE}" index.yaml
-          git add index.yaml
-          git diff --staged --quiet || git commit -m "Update Helm chart index"
-          git push origin gh-pages
-          git checkout "${GITHUB_REF_NAME}"
 
       - name: Ensure ArtifactHub metadata on gh-pages
         run: |
