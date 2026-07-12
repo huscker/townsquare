@@ -1,5 +1,13 @@
 # Release Notes
 
+### Version 2.17.1
+- переработан перевод описаний способностей всех 130 персонажей и 13 Легендарных — теперь адаптированный, а не буквальный
+- исправлен отображение названий команд (Горожане / Чужаки / Прислужники / Демон / Путники / Легендарные)
+- добавлена поддержка кириллицы: Roboto Condensed загружается с кириллическим сабсетом, шрифт Philosopher как fallback на токенах
+- добавлен fallback шрифт Roboto Condensed для заголовков на кириллице
+
+---
+
 ### Version 2.17.0
 - added English/Russian language support with in-app switcher (Grimoire tab)
 - Russian translations for all role names and ability descriptions in reference sheet, night order, and on tokens

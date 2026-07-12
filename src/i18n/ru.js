@@ -143,6 +143,14 @@ export default {
     claimSeatToVote: "Займите место, чтобы проголосовать.",
     go: "СТАРТ",
   },
+  teams: {
+    townsfolk: "Горожане",
+    outsider: "Чужаки",
+    minion: "Прислужники",
+    demon: "Демон",
+    traveler: "Путники",
+    fabled: "Легендарные",
+  },
   modals: {
     edition: {
       selectEdition: "Выберите редакцию:",

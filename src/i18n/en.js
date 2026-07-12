@@ -144,6 +144,14 @@ export default {
     claimSeatToVote: "Please claim a seat to vote.",
     go: "GO",
   },
+  teams: {
+    townsfolk: "Townsfolk",
+    outsider: "Outsiders",
+    minion: "Minions",
+    demon: "Demon",
+    traveler: "Travellers",
+    fabled: "Fabled",
+  },
   modals: {
     edition: {
       selectEdition: "Select an edition:",

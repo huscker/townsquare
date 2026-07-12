@@ -21,7 +21,7 @@
       :class="['team', team]"
     >
       <aside>
-        <h4>{{ team }}</h4>
+        <h4>{{ $t("teams." + team) }}</h4>
       </aside>
       <ul>
         <li v-for="role in teamRoles" :class="[team]" :key="role.id">

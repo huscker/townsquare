@@ -9,7 +9,7 @@
     "team": "fabled",
     "ability": "If 4 or more players live, each living player may publicly choose (once per game) that a player of their own alignment dies.",
     "name_ru": "Предвестник Судьбы",
-    "ability_ru": "Если живут 4 или более игроков, каждый живой игрок может публично (один раз за игру) потребовать смерти игрока своего мировоззрения."
+    "ability_ru": "Если в живых 4 или более игроков, каждый живой игрок может публично (один раз за игру) потребовать, чтобы умер игрок его мировоззрения."
   },
   {
     "id": "angel",
@@ -24,7 +24,7 @@
     "team": "fabled",
     "ability": "Something bad might happen to whoever is most responsible for the death of a new player.",
     "name_ru": "Ангел",
-    "ability_ru": "Что-то плохое может случиться с тем, кто в наибольшей мере ответственен за смерть нового игрока."
+    "ability_ru": "Что-то плохое может случиться с тем, кто в наибольшей мере виновен в гибели нового игрока."
   },
   {
     "id": "buddhist",
@@ -64,7 +64,7 @@
     "team": "fabled",
     "ability": "2 neighboring players are known to be the same alignment. Once per game, one of them registers falsely.",
     "name_ru": "Революционер",
-    "ability_ru": "2 соседних игрока известны как игроки одного мировоззрения. Один раз за игру один из них воспринимается неправильно."
+    "ability_ru": "Двое соседних игроков считаются игроками одного мировоззрения. Один раз за игру один из них воспринимается неверно."
   },
   {
     "id": "fiddler",
@@ -76,7 +76,7 @@
     "team": "fabled",
     "ability": "Once per game, the Demon secretly chooses an opposing player: all players choose which of these 2 players win.",
     "name_ru": "Скрипач",
-    "ability_ru": "Один раз за игру Демон тайно выбирает противоборствующего игрока: все выбирают, кто из этих двух победит."
+    "ability_ru": "Один раз за игру Демон тайно выбирает противоборствующего игрока: все игроки голосуют за то, кто из этих двоих победит."
   },
   {
     "id": "toymaker",
@@ -91,7 +91,7 @@
     "team": "fabled",
     "ability": "The Demon may choose not to attack & must do this at least once per game. Evil players get normal starting info.",
     "name_ru": "Игрушечник",
-    "ability_ru": "Демон может не нападать и должен сделать это хотя бы один раз за игру. Злые игроки получают обычную стартовую информацию."
+    "ability_ru": "Демон может воздержаться от нападения — и должен сделать это хотя бы один раз за игру. Злые игроки получают обычную начальную информацию."
   },
   {
     "id": "fibbin",
@@ -105,7 +105,7 @@
     "team": "fabled",
     "ability": "Once per game, 1 good player might get false information.",
     "name_ru": "Выдумщица",
-    "ability_ru": "Один раз за игру 1 добрый игрок может получить ложную информацию."
+    "ability_ru": "Один раз за игру один добрый игрок может получить ложную информацию."
   },
   {
     "id": "duchess",
@@ -121,7 +121,7 @@
     "team": "fabled",
     "ability": "Each day, 3 players may choose to visit you. At night*, each visitor learns how many visitors are evil, but 1 gets false info.",
     "name_ru": "Герцогиня",
-    "ability_ru": "Каждый день 3 игрока могут навестить вас. Ночью* каждый гость узнаёт, сколько гостей злые, но 1 получает ложную информацию."
+    "ability_ru": "Каждый день до трёх игроков могут навестить вас. Ночью* каждый гость узнаёт, сколько среди гостей злых, — но один из них получает ложную информацию."
   },
   {
     "id": "sentinel",
@@ -133,7 +133,7 @@
     "team": "fabled",
     "ability": "There might be 1 extra or 1 fewer Outsider in play.",
     "name_ru": "Страж",
-    "ability_ru": "В игре может быть на 1 Чужака больше или меньше."
+    "ability_ru": "В игре может быть на одного Чужака больше или меньше."
   },
   {
     "id": "spiritofivory",
@@ -147,7 +147,7 @@
     "team": "fabled",
     "ability": "There can't be more than 1 extra evil player.",
     "name_ru": "Дух Слоновой Кости",
-    "ability_ru": "Не может быть более 1 дополнительного злого игрока."
+    "ability_ru": "Число дополнительных злых игроков не может превышать одного."
   },
   {
     "id": "djinn",
@@ -160,7 +160,7 @@
     "team": "fabled",
     "ability": "Use the Djinn's special rule. All players know what it is.",
     "name_ru": "Джинн",
-    "ability_ru": "Используйте специальное правило Джинна. Все игроки знают, что это за правило."
+    "ability_ru": "Применяется особое правило Джинна. Все игроки знают, в чём оно состоит."
   },
   {
     "id": "stormcatcher",
@@ -175,6 +175,6 @@
     "team": "fabled",
     "ability": "Name a good character. If in play, they can only die by execution, but evil players learn which player it is.",
     "name_ru": "Ловец Бурь",
-    "ability_ru": "Назовите доброго персонажа. Если он в игре, он может умереть только от казни, но злые игроки узнают, кто этот игрок."
+    "ability_ru": "Назовите доброго персонажа. Если он в игре, он может умереть только от казни, но злые игроки узнают, кто именно этот игрок."
   }
 ]

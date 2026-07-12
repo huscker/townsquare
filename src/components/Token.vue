@@ -174,7 +174,7 @@ export default {
       stroke: white;
       stroke-width: 2px;
       paint-order: stroke;
-      font-family: "Papyrus", serif;
+      font-family: "Papyrus", "Philosopher", serif;
       font-weight: bold;
       text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
       letter-spacing: 1px;
