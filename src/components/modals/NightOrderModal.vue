@@ -170,7 +170,7 @@ export default {
   methods: {
     ...mapMutations(["toggleModal"]),
     roleName(role) {
-      return this.$i18n.locale === "ru" && role.name_ru ? role.name_ru : role.name;
+      return role[`name_${this.$i18n.locale}`] || role.name;
     },
   },
 };

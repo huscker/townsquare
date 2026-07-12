@@ -65,14 +65,10 @@ export default {
       );
     },
     displayName() {
-      return this.$i18n.locale === "ru" && this.role.name_ru
-        ? this.role.name_ru
-        : this.role.name;
+      return this.role[`name_${this.$i18n.locale}`] || this.role.name;
     },
     displayAbility() {
-      return this.$i18n.locale === "ru" && this.role.ability_ru
-        ? this.role.ability_ru
-        : this.role.ability;
+      return this.role[`ability_${this.$i18n.locale}`] || this.role.ability;
     },
     ...mapState(["grimoire"]),
   },
