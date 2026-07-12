@@ -34,7 +34,7 @@ jobs:
             git add index.yaml
             git commit -m "Initialize gh-pages branch"
             git push origin gh-pages
-            git checkout -
+            git checkout "$GITHUB_REF_NAME"
           fi
 
       - name: Install Helm
