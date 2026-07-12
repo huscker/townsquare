@@ -20,6 +20,7 @@ class LiveSession {
     this._pingInterval = 30 * 1000; // 30 seconds between pings
     this._pingTimer = null;
     this._reconnectTimer = null;
+    this._channel = null; // track current channel to detect new sessions
     this._players = {}; // map of players connected to a session
     this._pings = {}; // map of player IDs to ping
     // reconnect to previous session
@@ -235,6 +236,19 @@ class LiveSession {
     this._store.commit("session/setPlayerCount", 0);
     this._store.commit("session/setPing", 0);
     this._isSpectator = this._store.state.session.isSpectator;
+    // Clear reminders when joining a new session (not on reconnect to same channel)
+    if (this._isSpectator && channel !== this._channel) {
+      this._store.state.players.players.forEach((player) => {
+        if (player.reminders.length) {
+          this._store.commit("players/update", {
+            player,
+            property: "reminders",
+            value: [],
+          });
+        }
+      });
+    }
+    this._channel = channel;
     this._open(channel);
   }
 
