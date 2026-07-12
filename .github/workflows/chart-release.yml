@@ -54,6 +54,7 @@ jobs:
       - name: Ensure ArtifactHub metadata on gh-pages
         run: |
           git fetch origin gh-pages
+          git clean -f index.yaml
           git checkout gh-pages
           if [ ! -f artifacthub-repo.yml ]; then
             cat > artifacthub-repo.yml << 'EOF'
