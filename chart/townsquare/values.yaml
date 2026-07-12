@@ -23,11 +23,11 @@ namespaceOverride: ""
 frontend:
   image:
     ## @param frontend.image.registry Frontend image registry
-    registry: ""
+    registry: ghcr.io
     ## @param frontend.image.repository Frontend image repository
-    repository: townsquare-frontend
+    repository: huscker/townsquare-frontend
     ## @param frontend.image.tag Frontend image tag (immutable tags are recommended)
-    tag: latest
+    tag: 2.15.2
     ## @param frontend.image.digest Frontend image digest in the way sha256:aa...
     digest: ""
     ## @param frontend.image.pullPolicy Frontend image pull policy
@@ -242,11 +242,11 @@ frontend:
 backend:
   image:
     ## @param backend.image.registry Backend image registry
-    registry: ""
+    registry: ghcr.io
     ## @param backend.image.repository Backend image repository
-    repository: townsquare-backend
+    repository: huscker/townsquare-backend
     ## @param backend.image.tag Backend image tag (immutable tags are recommended)
-    tag: latest
+    tag: 2.15.2
     ## @param backend.image.digest Backend image digest in the way sha256:aa...
     digest: ""
     ## @param backend.image.pullPolicy Backend image pull policy

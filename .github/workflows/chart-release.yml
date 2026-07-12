@@ -1,0 +1,58 @@
+name: Release Helm Charts
+
+on:
+  push:
+    branches:
+      - develop
+    paths:
+      - "chart/**"
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config user.name "$GITHUB_ACTOR"
+          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+
+      - name: Install Helm
+        uses: azure/setup-helm@v4
+
+      - name: Add Bitnami repo
+        run: helm repo add bitnami https://charts.bitnami.com/bitnami
+
+      - name: Run chart-releaser
+        uses: helm/chart-releaser-action@v1.6.0
+        with:
+          charts_dir: chart
+        env:
+          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+
+      - name: Ensure ArtifactHub metadata on gh-pages
+        run: |
+          git fetch origin gh-pages 2>/dev/null || true
+          if git show-ref --quiet refs/remotes/origin/gh-pages; then
+            git checkout gh-pages
+          else
+            git checkout --orphan gh-pages
+            git rm -rf . --quiet
+          fi
+          if [ ! -f artifacthub-repo.yml ]; then
+            cat > artifacthub-repo.yml << 'EOF'
+          owners:
+            - name: huscker
+              email: egorgolubev@bulltrade.org
+          EOF
+            git add artifacthub-repo.yml
+            git commit -m "Add ArtifactHub repository metadata"
+            git push origin gh-pages
+          fi
