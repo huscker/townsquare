@@ -52,9 +52,15 @@ jobs:
 
       - name: Regenerate index from all releases
         run: |
+          CR_BIN=$(find /opt/hostedtoolcache/cr -type f -name cr | head -1)
+          if [ -z "$CR_BIN" ]; then
+            curl -sSL https://github.com/helm/chart-releaser/releases/download/v1.6.1/chart-releaser_1.6.1_linux_amd64.tar.gz \
+              | tar -xz -C /usr/local/bin cr
+            CR_BIN=/usr/local/bin/cr
+          fi
           owner=$(cut -d '/' -f 1 <<< "$GITHUB_REPOSITORY")
           repo=$(cut -d '/' -f 2 <<< "$GITHUB_REPOSITORY")
-          cr index \
+          "$CR_BIN" index \
             --owner "$owner" \
             --git-repo "$repo" \
             --token "${{ secrets.GITHUB_TOKEN }}" \
