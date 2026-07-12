@@ -44,8 +44,8 @@
             <span class="player" v-if="Object.keys(playersByRole).length">{{
               playersByRole[role.id] ? playersByRole[role.id].join(", ") : ""
             }}</span>
-            <span class="name">{{ role.name }}</span>
-            <span class="ability">{{ role.ability }}</span>
+            <span class="name">{{ roleName(role) }}</span>
+            <span class="ability">{{ roleAbility(role) }}</span>
           </div>
         </li>
         <li :class="[team]"></li>
@@ -77,7 +77,7 @@
           ></span>
           <div class="role">
             <span class="name"
-              >{{ jinx.first.name }} & {{ jinx.second.name }}</span
+              >{{ roleName(jinx.first) }} & {{ roleName(jinx.second) }}</span
             >
             <span class="ability">{{ jinx.reason }}</span>
           </div>
@@ -147,6 +147,14 @@ export default {
   },
   methods: {
     ...mapMutations(["toggleModal"]),
+    roleName(role) {
+      return this.$i18n.locale === "ru" && role.name_ru ? role.name_ru : role.name;
+    },
+    roleAbility(role) {
+      return this.$i18n.locale === "ru" && role.ability_ru
+        ? role.ability_ru
+        : role.ability;
+    },
   },
 };
 </script>

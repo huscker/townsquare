@@ -32,16 +32,16 @@
         x="66.6%"
         text-anchor="middle"
         class="label mozilla"
-        :font-size="role.name | nameToFontSize"
+        :font-size="displayName | nameToFontSize"
       >
         <textPath xlink:href="#curve">
-          {{ role.name }}
+          {{ displayName }}
         </textPath>
       </text>
     </svg>
     <div class="edition" :class="[`edition-${role.edition}`, role.team]"></div>
     <div class="ability" v-if="role.ability">
-      {{ role.ability }}
+      {{ displayAbility }}
     </div>
   </div>
 </template>
@@ -63,6 +63,16 @@ export default {
         (this.role.reminders || []).length +
         (this.role.remindersGlobal || []).length
       );
+    },
+    displayName() {
+      return this.$i18n.locale === "ru" && this.role.name_ru
+        ? this.role.name_ru
+        : this.role.name;
+    },
+    displayAbility() {
+      return this.$i18n.locale === "ru" && this.role.ability_ru
+        ? this.role.ability_ru
+        : this.role.ability;
     },
     ...mapState(["grimoire"]),
   },

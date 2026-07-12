@@ -3,7 +3,7 @@ name: townsquare
 description: Blood on the Clocktower Town Square - Helm chart for Kubernetes deployment
 type: application
 version: 1.0.3
-appVersion: "2.16.6"
+appVersion: "2.16.7"
 home: https://github.com/huscker/townsquare
 sources:
   - https://github.com/huscker/townsquare
@@ -26,11 +26,11 @@ annotations:
       url: https://github.com/huscker/townsquare/blob/develop/CHANGELOG.md
   artifacthub.io/changes: |
     - kind: added
-      description: Clear reminders button for Storyteller
-    - kind: added
-      description: Sync state to players button for Storyteller
+      description: Russian role names and ability descriptions in reference sheet and night order
     - kind: added
       description: Russian language support with in-app language switcher
+    - kind: added
+      description: Clear reminders and Sync state to players buttons for Storyteller
   artifacthub.io/images: |
     - name: townsquare-frontend
       image: ghcr.io/huscker/townsquare-frontend:2.15.2

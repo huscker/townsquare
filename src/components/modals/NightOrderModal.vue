@@ -24,7 +24,7 @@
           :class="[role.team]"
         >
           <span class="name">
-            {{ role.name }}
+            {{ roleName(role) }}
             <span class="player" v-if="role.players.length">
               <br />
               <small
@@ -80,7 +80,7 @@
             }"
           ></span>
           <span class="name">
-            {{ role.name }}
+            {{ roleName(role) }}
             <span class="player" v-if="role.players.length">
               <br />
               <small
@@ -169,6 +169,9 @@ export default {
   },
   methods: {
     ...mapMutations(["toggleModal"]),
+    roleName(role) {
+      return this.$i18n.locale === "ru" && role.name_ru ? role.name_ru : role.name;
+    },
   },
 };
 </script>

@@ -1,5 +1,11 @@
 # Release Notes
 
+### Version 2.16.7
+- translated role names and ability descriptions to Russian in the reference sheet, night order, and on tokens
+- default language for cluster deployment set to Russian
+
+---
+
 ### Version 2.16.6
 - added English/Russian language support with in-app switcher (Grimoire tab)
 - default language configurable via `frontend.runtimeConfig.defaultLanguage` Helm value or `RUNTIME_CONFIG.defaultLanguage`; falls back to localStorage preference then English
