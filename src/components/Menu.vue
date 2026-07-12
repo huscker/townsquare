@@ -353,7 +353,13 @@ export default {
       }
     },
     syncState() {
-      this.$store.commit("session/syncState");
+      if (
+        confirm(
+          "Sync your full grimoire state (roles, reminders, gamestate) to all players?",
+        )
+      ) {
+        this.$store.commit("session/syncState");
+      }
     },
     toggleNight() {
       this.$store.commit("toggleNight");

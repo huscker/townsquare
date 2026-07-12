@@ -879,6 +879,11 @@ class LiveSession {
     this._store.state.players.players.forEach((player, index) => {
       const roleId = player.role && player.role.id ? player.role.id : "";
       this._send("player", { index, property: "role", value: roleId });
+      this._send("player", {
+        index,
+        property: "reminders",
+        value: player.reminders,
+      });
     });
   }
 }

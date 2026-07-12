@@ -1,5 +1,11 @@
 # Release Notes
 
+### Version 2.16.5
+- "Sync state to players" now also syncs reminder tokens to all connected players
+- added confirmation dialogs to "Clear reminders" and "Sync state to players" to prevent accidental clicks
+
+---
+
 ### Version 2.16.4
 - added "Clear reminders" button in Characters tab (ST only) — clears all reminder tokens for all connected players
 - added "Sync state to players" button in Characters tab (ST only) — pushes full grimoire state (roles + gamestate) to all connected players at once
