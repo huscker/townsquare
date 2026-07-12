@@ -1,10 +1,17 @@
 # Release Notes
 
+### Version 2.17.2
+- translated reminder token texts to Russian (Drunk, Poisoned, Protected, etc.)
+- token name font: Cormorant as Cyrillic fallback (closer to BotC style than Philosopher)
+- heading font: Lobster as Cyrillic fallback for PiratesBay (more decorative than Roboto Condensed)
+
+---
+
 ### Version 2.17.1
-- переработан перевод описаний способностей всех 130 персонажей и 13 Легендарных — теперь адаптированный, а не буквальный
-- исправлен отображение названий команд (Горожане / Чужаки / Прислужники / Демон / Путники / Легендарные)
-- добавлена поддержка кириллицы: Roboto Condensed загружается с кириллическим сабсетом, шрифт Philosopher как fallback на токенах
-- добавлен fallback шрифт Roboto Condensed для заголовков на кириллице
+- rewrote all 130 role and 13 fabled ability descriptions in Russian — natural language instead of literal translation
+- localised team names in reference sheet (Горожане / Чужаки / Прислужники / Демон / Путники / Легендарные)
+- Roboto Condensed now loads with Cyrillic subset; Philosopher added as Cyrillic fallback on tokens
+- Roboto Condensed added as heading fallback for Cyrillic text
 
 ---
 

@@ -50,6 +50,12 @@ const mapReminder =
     name,
   });
 
+const localizedReminders = (role, locale) =>
+  role[`reminders_${locale}`] || role.reminders;
+
+const localizedRemindersGlobal = (role, locale) =>
+  role[`remindersGlobal_${locale}`] || role.remindersGlobal;
+
 export default {
   components: { Modal },
   props: ["playerIndex"],
@@ -57,32 +63,33 @@ export default {
     availableReminders() {
       let reminders = [];
       const { players, bluffs } = this.$store.state.players;
+      const locale = this.$i18n.locale;
       this.$store.state.roles.forEach((role) => {
         // add reminders from player roles
         if (players.some((p) => p.role.id === role.id)) {
-          reminders = [...reminders, ...role.reminders.map(mapReminder(role))];
+          reminders = [...reminders, ...localizedReminders(role, locale).map(mapReminder(role))];
         }
         // add reminders from bluff/other roles
         else if (bluffs.some((bluff) => bluff.id === role.id)) {
-          reminders = [...reminders, ...role.reminders.map(mapReminder(role))];
+          reminders = [...reminders, ...localizedReminders(role, locale).map(mapReminder(role))];
         }
         // add global reminders
         if (role.remindersGlobal && role.remindersGlobal.length) {
           reminders = [
             ...reminders,
-            ...role.remindersGlobal.map(mapReminder(role)),
+            ...localizedRemindersGlobal(role, locale).map(mapReminder(role)),
           ];
         }
       });
       // add fabled reminders
       this.$store.state.players.fabled.forEach((role) => {
-        reminders = [...reminders, ...role.reminders.map(mapReminder(role))];
+        reminders = [...reminders, ...localizedReminders(role, locale).map(mapReminder(role))];
       });
 
       // add out of script traveler reminders
       this.$store.state.otherTravelers.forEach((role) => {
         if (players.some((p) => p.role.id === role.id)) {
-          reminders = [...reminders, ...role.reminders.map(mapReminder(role))];
+          reminders = [...reminders, ...localizedReminders(role, locale).map(mapReminder(role))];
         }
       });
 

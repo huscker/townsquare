@@ -15,7 +15,11 @@
     "setup": false,
     "ability": "You start knowing that 1 of 2 players is a particular Townsfolk.",
     "name_ru": "Прачка",
-    "ability_ru": "В начале игры вы знаете, что один из двух указанных игроков — конкретный Горожанин."
+    "ability_ru": "В начале игры вы знаете, что один из двух указанных игроков — конкретный Горожанин.",
+    "reminders_ru": [
+      "Горожанин",
+      "Ошибка"
+    ]
   },
   {
     "id": "librarian",
@@ -33,7 +37,11 @@
     "setup": false,
     "ability": "You start knowing that 1 of 2 players is a particular Outsider. (Or that zero are in play.)",
     "name_ru": "Библиотекарь",
-    "ability_ru": "В начале игры вы знаете, что один из двух указанных игроков — конкретный Чужак. (Или что Чужаков нет.)"
+    "ability_ru": "В начале игры вы знаете, что один из двух указанных игроков — конкретный Чужак. (Или что Чужаков нет.)",
+    "reminders_ru": [
+      "Чужак",
+      "Ошибка"
+    ]
   },
   {
     "id": "investigator",
@@ -51,7 +59,11 @@
     "setup": false,
     "ability": "You start knowing that 1 of 2 players is a particular Minion.",
     "name_ru": "Следователь",
-    "ability_ru": "В начале игры вы знаете, что один из двух указанных игроков — конкретный Прислужник."
+    "ability_ru": "В начале игры вы знаете, что один из двух указанных игроков — конкретный Прислужник.",
+    "reminders_ru": [
+      "Прислужник",
+      "Ошибка"
+    ]
   },
   {
     "id": "chef",
@@ -98,7 +110,10 @@
     "setup": false,
     "ability": "Each night, choose 2 players: you learn if either is a Demon. There is a good player that registers as a Demon to you.",
     "name_ru": "Гадалка",
-    "ability_ru": "Каждую ночь выберите двух игроков: вы узнаёте, является ли кто-то из них Демоном. Один добрый игрок воспринимается вами как Демон."
+    "ability_ru": "Каждую ночь выберите двух игроков: вы узнаёте, является ли кто-то из них Демоном. Один добрый игрок воспринимается вами как Демон.",
+    "reminders_ru": [
+      "Красная селёдка"
+    ]
   },
   {
     "id": "undertaker",
@@ -115,7 +130,10 @@
     "setup": false,
     "ability": "Each night*, you learn which character died by execution today.",
     "name_ru": "Гробовщик",
-    "ability_ru": "Каждую ночь* вы узнаёте, какого персонажа казнили сегодня."
+    "ability_ru": "Каждую ночь* вы узнаёте, какого персонажа казнили сегодня.",
+    "reminders_ru": [
+      "Казнён"
+    ]
   },
   {
     "id": "monk",
@@ -132,7 +150,10 @@
     "setup": false,
     "ability": "Each night*, choose a player (not yourself): they are safe from the Demon tonight.",
     "name_ru": "Монах",
-    "ability_ru": "Каждую ночь* выберите игрока (не себя): этой ночью он защищён от Демона."
+    "ability_ru": "Каждую ночь* выберите игрока (не себя): этой ночью он защищён от Демона.",
+    "reminders_ru": [
+      "Защищён"
+    ]
   },
   {
     "id": "ravenkeeper",
@@ -164,7 +185,10 @@
     "setup": false,
     "ability": "The 1st time you are nominated, if the nominator is a Townsfolk, they are executed immediately.",
     "name_ru": "Дева",
-    "ability_ru": "Когда вас впервые выдвигают на казнь, если тот, кто вас выдвинул — Горожанин, он немедленно казнён."
+    "ability_ru": "Когда вас впервые выдвигают на казнь, если тот, кто вас выдвинул — Горожанин, он немедленно казнён.",
+    "reminders_ru": [
+      "Нет способности"
+    ]
   },
   {
     "id": "slayer",
@@ -181,7 +205,10 @@
     "setup": false,
     "ability": "Once per game, during the day, publicly choose a player: if they are the Demon, they die.",
     "name_ru": "Охотник",
-    "ability_ru": "Один раз за игру, днём, публично выберите игрока: если он Демон — он умирает."
+    "ability_ru": "Один раз за игру, днём, публично выберите игрока: если он Демон — он умирает.",
+    "reminders_ru": [
+      "Нет способности"
+    ]
   },
   {
     "id": "soldier",
@@ -228,7 +255,10 @@
     "setup": false,
     "ability": "Each night, choose a player (not yourself): tomorrow, you may only vote if they are voting too.",
     "name_ru": "Дворецкий",
-    "ability_ru": "Каждую ночь выберите игрока (не себя): завтра вы можете голосовать только если он тоже голосует."
+    "ability_ru": "Каждую ночь выберите игрока (не себя): завтра вы можете голосовать только если он тоже голосует.",
+    "reminders_ru": [
+      "Мастер"
+    ]
   },
   {
     "id": "drunk",
@@ -246,7 +276,10 @@
     "setup": true,
     "ability": "You do not know you are the Drunk. You think you are a Townsfolk character, but you are not.",
     "name_ru": "Пьяница",
-    "ability_ru": "Вы не знаете, что вы Пьяница. Вы думаете, что вы — Горожанин, но это не так."
+    "ability_ru": "Вы не знаете, что вы Пьяница. Вы думаете, что вы — Горожанин, но это не так.",
+    "remindersGlobal_ru": [
+      "Пьяный"
+    ]
   },
   {
     "id": "recluse",
@@ -293,7 +326,10 @@
     "setup": false,
     "ability": "Each night, choose a player: they are poisoned tonight and tomorrow day.",
     "name_ru": "Отравитель",
-    "ability_ru": "Каждую ночь выберите игрока: этой ночью и весь следующий день он отравлен."
+    "ability_ru": "Каждую ночь выберите игрока: этой ночью и весь следующий день он отравлен.",
+    "reminders_ru": [
+      "Отравлен"
+    ]
   },
   {
     "id": "spy",
@@ -325,7 +361,10 @@
     "setup": false,
     "ability": "If there are 5 or more players alive & the Demon dies, you become the Demon. (Travellers don’t count)",
     "name_ru": "Алая Женщина",
-    "ability_ru": "Если живы 5 или более игроков и Демон умирает, вы становитесь Демоном. (Путники не считаются.)"
+    "ability_ru": "Если живы 5 или более игроков и Демон умирает, вы становитесь Демоном. (Путники не считаются.)",
+    "reminders_ru": [
+      "Демон"
+    ]
   },
   {
     "id": "baron",
@@ -357,7 +396,10 @@
     "setup": false,
     "ability": "Each night*, choose a player: they die. If you kill yourself this way, a Minion becomes the Imp.",
     "name_ru": "Бес",
-    "ability_ru": "Каждую ночь* выберите игрока: он умирает. Если вы таким образом убиваете себя, один из Прислужников становится Бесом."
+    "ability_ru": "Каждую ночь* выберите игрока: он умирает. Если вы таким образом убиваете себя, один из Прислужников становится Бесом.",
+    "reminders_ru": [
+      "Мёртвый"
+    ]
   },
   {
     "id": "bureaucrat",
@@ -374,7 +416,10 @@
     "setup": false,
     "ability": "Each night, choose a player (not yourself): their vote counts as 3 votes tomorrow.",
     "name_ru": "Бюрократ",
-    "ability_ru": "Каждую ночь выберите игрока (не себя): завтра его голос считается за 3."
+    "ability_ru": "Каждую ночь выберите игрока (не себя): завтра его голос считается за 3.",
+    "reminders_ru": [
+      "3 голоса"
+    ]
   },
   {
     "id": "thief",
@@ -391,7 +436,10 @@
     "setup": false,
     "ability": "Each night, choose a player (not yourself): their vote counts negatively tomorrow.",
     "name_ru": "Вор",
-    "ability_ru": "Каждую ночь выберите игрока (не себя): завтра его голос считается как отрицательный."
+    "ability_ru": "Каждую ночь выберите игрока (не себя): завтра его голос считается как отрицательный.",
+    "reminders_ru": [
+      "Отрицательный голос"
+    ]
   },
   {
     "id": "gunslinger",
@@ -453,7 +501,10 @@
     "setup": false,
     "ability": "You start knowing a good player & their character. If the Demon kills them, you die too.",
     "name_ru": "Бабушка",
-    "ability_ru": "В начале игры вы знаете одного доброго игрока и его персонажа. Если Демон убивает его, вы тоже умираете."
+    "ability_ru": "В начале игры вы знаете одного доброго игрока и его персонажа. Если Демон убивает его, вы тоже умираете.",
+    "reminders_ru": [
+      "Внук"
+    ]
   },
   {
     "id": "sailor",
@@ -470,7 +521,10 @@
     "setup": false,
     "ability": "Each night, choose an alive player: either you or they are drunk until dusk. You can't die.",
     "name_ru": "Моряк",
-    "ability_ru": "Каждую ночь выберите живого игрока: либо вы, либо он пьяны до рассвета. Вы не можете умереть."
+    "ability_ru": "Каждую ночь выберите живого игрока: либо вы, либо он пьяны до рассвета. Вы не можете умереть.",
+    "reminders_ru": [
+      "Пьяный"
+    ]
   },
   {
     "id": "chambermaid",
@@ -502,7 +556,10 @@
     "setup": false,
     "ability": "Each night*, choose a player (different to last night): the Demon, if chosen, learns who you are then doesn't wake tonight.",
     "name_ru": "Экзорцист",
-    "ability_ru": "Каждую ночь* выберите игрока (не того же, что прошлой ночью): если выбранный — Демон, он узнаёт, кто вы, и не просыпается этой ночью."
+    "ability_ru": "Каждую ночь* выберите игрока (не того же, что прошлой ночью): если выбранный — Демон, он узнаёт, кто вы, и не просыпается этой ночью.",
+    "reminders_ru": [
+      "Выбран"
+    ]
   },
   {
     "id": "innkeeper",
@@ -520,7 +577,11 @@
     "setup": false,
     "ability": "Each night*, choose 2 players: they can't die tonight, but 1 is drunk until dusk.",
     "name_ru": "Трактирщик",
-    "ability_ru": "Каждую ночь* выберите двух игроков: они не могут умереть этой ночью, но один из них пьян до рассвета."
+    "ability_ru": "Каждую ночь* выберите двух игроков: они не могут умереть этой ночью, но один из них пьян до рассвета.",
+    "reminders_ru": [
+      "Защищён",
+      "Пьяный"
+    ]
   },
   {
     "id": "gambler",
@@ -537,7 +598,10 @@
     "setup": false,
     "ability": "Each night*, choose a player & guess their character: if you guess wrong, you die.",
     "name_ru": "Игрок",
-    "ability_ru": "Каждую ночь* выберите игрока и угадайте его персонажа: если вы ошибаетесь, вы умираете."
+    "ability_ru": "Каждую ночь* выберите игрока и угадайте его персонажа: если вы ошибаетесь, вы умираете.",
+    "reminders_ru": [
+      "Мёртвый"
+    ]
   },
   {
     "id": "gossip",
@@ -554,7 +618,10 @@
     "setup": false,
     "ability": "Each day, you may make a public statement. Tonight, if it was true, a player dies.",
     "name_ru": "Сплетник",
-    "ability_ru": "Каждый день вы можете сделать публичное заявление. Этой ночью, если оно оказалось правдой, один игрок умирает."
+    "ability_ru": "Каждый день вы можете сделать публичное заявление. Этой ночью, если оно оказалось правдой, один игрок умирает.",
+    "reminders_ru": [
+      "Мёртвый"
+    ]
   },
   {
     "id": "courtier",
@@ -574,7 +641,13 @@
     "setup": false,
     "ability": "Once per game, at night, choose a character: they are drunk for 3 nights & 3 days.",
     "name_ru": "Придворный",
-    "ability_ru": "Один раз за игру ночью назовите персонажа: он пьян в течение 3 ночей и 3 дней."
+    "ability_ru": "Один раз за игру ночью назовите персонажа: он пьян в течение 3 ночей и 3 дней.",
+    "reminders_ru": [
+      "Пьяный 3",
+      "Пьяный 2",
+      "Пьяный 1",
+      "Нет способности"
+    ]
   },
   {
     "id": "professor",
@@ -592,7 +665,11 @@
     "setup": false,
     "ability": "Once per game, at night*, choose a dead player: if they are a Townsfolk, they are resurrected.",
     "name_ru": "Профессор",
-    "ability_ru": "Один раз за игру, ночью*, выберите мёртвого игрока: если он Горожанин, он воскрешается."
+    "ability_ru": "Один раз за игру, ночью*, выберите мёртвого игрока: если он Горожанин, он воскрешается.",
+    "reminders_ru": [
+      "Живой",
+      "Нет способности"
+    ]
   },
   {
     "id": "minstrel",
@@ -609,7 +686,10 @@
     "setup": false,
     "ability": "When a Minion dies by execution, all other players (except Travellers) are drunk until dusk tomorrow.",
     "name_ru": "Менестрель",
-    "ability_ru": "Когда Прислужник умирает от казни, все остальные игроки (кроме Путников) пьяны до следующего рассвета."
+    "ability_ru": "Когда Прислужник умирает от казни, все остальные игроки (кроме Путников) пьяны до следующего рассвета.",
+    "reminders_ru": [
+      "Все пьяны"
+    ]
   },
   {
     "id": "tealady",
@@ -626,7 +706,10 @@
     "setup": false,
     "ability": "If both your alive neighbours are good, they can't die.",
     "name_ru": "Чайная Дама",
-    "ability_ru": "Если оба ваших живых соседа — добрые, они не могут умереть."
+    "ability_ru": "Если оба ваших живых соседа — добрые, они не могут умереть.",
+    "reminders_ru": [
+      "Не может умереть"
+    ]
   },
   {
     "id": "pacifist",
@@ -658,7 +741,10 @@
     "setup": false,
     "ability": "The first time you die, you don't.",
     "name_ru": "Дурак",
-    "ability_ru": "Первый раз, когда вы умираете, — вы не умираете."
+    "ability_ru": "Первый раз, когда вы умираете, — вы не умираете.",
+    "reminders_ru": [
+      "Нет способности"
+    ]
   },
   {
     "id": "tinker",
@@ -675,7 +761,10 @@
     "setup": false,
     "ability": "You might die at any time.",
     "name_ru": "Бродяга",
-    "ability_ru": "Вы можете умереть в любой момент."
+    "ability_ru": "Вы можете умереть в любой момент.",
+    "reminders_ru": [
+      "Мёртвый"
+    ]
   },
   {
     "id": "moonchild",
@@ -692,7 +781,10 @@
     "setup": false,
     "ability": "When you learn that you died, publicly choose 1 alive player. Tonight, if it was a good player, they die.",
     "name_ru": "Лунное Дитя",
-    "ability_ru": "Когда вы узнаёте, что умерли, публично выберите одного живого игрока. Этой ночью, если выбранный — добрый, он умирает."
+    "ability_ru": "Когда вы узнаёте, что умерли, публично выберите одного живого игрока. Этой ночью, если выбранный — добрый, он умирает.",
+    "reminders_ru": [
+      "Мёртвый"
+    ]
   },
   {
     "id": "goon",
@@ -709,7 +801,10 @@
     "setup": false,
     "ability": "Each night, the 1st player to choose you with their ability is drunk until dusk. You become their alignment.",
     "name_ru": "Головорез",
-    "ability_ru": "Каждую ночь первый игрок, выбравший вас своей способностью, пьян до рассвета. Вы принимаете его мировоззрение."
+    "ability_ru": "Каждую ночь первый игрок, выбравший вас своей способностью, пьян до рассвета. Вы принимаете его мировоззрение.",
+    "reminders_ru": [
+      "Пьяный"
+    ]
   },
   {
     "id": "lunatic",
@@ -728,7 +823,12 @@
     "setup": false,
     "ability": "You think you are a Demon, but you are not. The Demon knows who you are & who you choose at night.",
     "name_ru": "Безумец",
-    "ability_ru": "Вы думаете, что вы Демон, но это не так. Демон знает, кто вы и кого вы выбираете ночью."
+    "ability_ru": "Вы думаете, что вы Демон, но это не так. Демон знает, кто вы и кого вы выбираете ночью.",
+    "reminders_ru": [
+      "Атака 1",
+      "Атака 2",
+      "Атака 3"
+    ]
   },
   {
     "id": "godfather",
@@ -746,7 +846,11 @@
     "setup": true,
     "ability": "You start knowing which Outsiders are in play. If 1 died today, choose a player tonight: they die. [−1 or +1 Outsider]",
     "name_ru": "Крёстный Отец",
-    "ability_ru": "В начале игры вы знаете, какие Чужаки есть в игре. Если сегодня умер один из них, ночью выберите игрока: он умирает. [−1 или +1 Чужак]"
+    "ability_ru": "В начале игры вы знаете, какие Чужаки есть в игре. Если сегодня умер один из них, ночью выберите игрока: он умирает. [−1 или +1 Чужак]",
+    "reminders_ru": [
+      "Умер сегодня",
+      "Мёртвый"
+    ]
   },
   {
     "id": "devilsadvocate",
@@ -763,7 +867,10 @@
     "setup": false,
     "ability": "Each night, choose a living player (different to last night): if executed tomorrow, they don't die.",
     "name_ru": "Адвокат Дьявола",
-    "ability_ru": "Каждую ночь выберите живого игрока (не того же, что прошлой ночью): если его казнят завтра, он не умирает."
+    "ability_ru": "Каждую ночь выберите живого игрока (не того же, что прошлой ночью): если его казнят завтра, он не умирает.",
+    "reminders_ru": [
+      "Выживает при казни"
+    ]
   },
   {
     "id": "assassin",
@@ -781,7 +888,11 @@
     "setup": false,
     "ability": "Once per game, at night*, choose a player: they die, even if for some reason they could not.",
     "name_ru": "Убийца",
-    "ability_ru": "Один раз за игру, ночью*, выберите игрока: он умирает, даже если по каким-то причинам не мог умереть."
+    "ability_ru": "Один раз за игру, ночью*, выберите игрока: он умирает, даже если по каким-то причинам не мог умереть.",
+    "reminders_ru": [
+      "Мёртвый",
+      "Нет способности"
+    ]
   },
   {
     "id": "mastermind",
@@ -814,7 +925,11 @@
     "setup": false,
     "ability": "Each night*, if no-one died today, choose a player: they die. The 1st time you die, you live but register as dead.",
     "name_ru": "Зомбуул",
-    "ability_ru": "Каждую ночь*, если сегодня никто не умер, выберите игрока: он умирает. Первый раз, когда вы умираете, вы живёте, но воспринимаетесь как мёртвый."
+    "ability_ru": "Каждую ночь*, если сегодня никто не умер, выберите игрока: он умирает. Первый раз, когда вы умираете, вы живёте, но воспринимаетесь как мёртвый.",
+    "reminders_ru": [
+      "Умер сегодня",
+      "Мёртвый"
+    ]
   },
   {
     "id": "pukka",
@@ -832,7 +947,11 @@
     "setup": false,
     "ability": "Each night, choose a player: they are poisoned. The previously poisoned player dies then becomes healthy.",
     "name_ru": "Пукка",
-    "ability_ru": "Каждую ночь выберите игрока: он отравлен. Ранее отравленный игрок умирает, а затем становится здоровым."
+    "ability_ru": "Каждую ночь выберите игрока: он отравлен. Ранее отравленный игрок умирает, а затем становится здоровым.",
+    "reminders_ru": [
+      "Отравлен",
+      "Мёртвый"
+    ]
   },
   {
     "id": "shabaloth",
@@ -850,7 +969,11 @@
     "setup": false,
     "ability": "Each night*, choose 2 players: they die. A dead player you chose last night might be regurgitated.",
     "name_ru": "Шабалот",
-    "ability_ru": "Каждую ночь* выберите двух игроков: они умирают. Мёртвый игрок, выбранный вами прошлой ночью, может быть возвращён к жизни."
+    "ability_ru": "Каждую ночь* выберите двух игроков: они умирают. Мёртвый игрок, выбранный вами прошлой ночью, может быть возвращён к жизни.",
+    "reminders_ru": [
+      "Мёртвый",
+      "Живой"
+    ]
   },
   {
     "id": "po",
@@ -868,7 +991,11 @@
     "setup": false,
     "ability": "Each night*, you may choose a player: they die. If your last choice was no-one, choose 3 players tonight.",
     "name_ru": "По",
-    "ability_ru": "Каждую ночь* вы можете выбрать игрока: он умирает. Если прошлой ночью вы никого не выбирали, этой ночью выберите троих игроков."
+    "ability_ru": "Каждую ночь* вы можете выбрать игрока: он умирает. Если прошлой ночью вы никого не выбирали, этой ночью выберите троих игроков.",
+    "reminders_ru": [
+      "Мёртвый",
+      "3 атаки"
+    ]
   },
   {
     "id": "apprentice",
@@ -885,7 +1012,10 @@
     "setup": false,
     "ability": "On your 1st night, you gain a Townsfolk ability (if good), or a Minion ability (if evil).",
     "name_ru": "Ученик",
-    "ability_ru": "В первую ночь вы получаете способность Горожанина (если вы добрый) или Прислужника (если злой)."
+    "ability_ru": "В первую ночь вы получаете способность Горожанина (если вы добрый) или Прислужника (если злой).",
+    "reminders_ru": [
+      "Это Подмастерье"
+    ]
   },
   {
     "id": "matron",
@@ -917,7 +1047,10 @@
     "setup": false,
     "ability": "Once per game, if another player nominated, you may choose to force the current execution to pass or fail.",
     "name_ru": "Судья",
-    "ability_ru": "Один раз за игру, если другой игрок выдвинул кого-то на казнь, вы можете принудительно провести или отменить текущую казнь."
+    "ability_ru": "Один раз за игру, если другой игрок выдвинул кого-то на казнь, вы можете принудительно провести или отменить текущую казнь.",
+    "reminders_ru": [
+      "Нет способности"
+    ]
   },
   {
     "id": "bishop",
@@ -935,7 +1068,11 @@
     "setup": false,
     "ability": "Only the Storyteller can nominate. At least 1 opposite player must be nominated each day.",
     "name_ru": "Епископ",
-    "ability_ru": "Только Рассказчик может выдвигать на казнь. Каждый день нужно выдвинуть минимум одного игрока с противоположным мировоззрением."
+    "ability_ru": "Только Рассказчик может выдвигать на казнь. Каждый день нужно выдвинуть минимум одного игрока с противоположным мировоззрением.",
+    "reminders_ru": [
+      "Выдвинуть доброго",
+      "Выдвинуть злого"
+    ]
   },
   {
     "id": "voudon",
@@ -997,7 +1134,10 @@
     "setup": false,
     "ability": "Each night, choose an alive player: a chosen Demon swaps characters & alignments with you & is then poisoned.",
     "name_ru": "Заклинатель Змей",
-    "ability_ru": "Каждую ночь выберите живого игрока: если выбранный — Демон, вы и он меняетесь персонажами и мировоззрениями, после чего он отравляется."
+    "ability_ru": "Каждую ночь выберите живого игрока: если выбранный — Демон, вы и он меняетесь персонажами и мировоззрениями, после чего он отравляется.",
+    "reminders_ru": [
+      "Отравлен"
+    ]
   },
   {
     "id": "mathematician",
@@ -1014,7 +1154,10 @@
     "setup": false,
     "ability": "Each night, you learn how many players’ abilities worked abnormally (since dawn) due to another character's ability.",
     "name_ru": "Математик",
-    "ability_ru": "Каждую ночь вы узнаёте, сколько игроков получили неверный результат от своей способности из-за чужого влияния (с прошлого рассвета)."
+    "ability_ru": "Каждую ночь вы узнаёте, сколько игроков получили неверный результат от своей способности из-за чужого влияния (с прошлого рассвета).",
+    "reminders_ru": [
+      "Ненормальный"
+    ]
   },
   {
     "id": "flowergirl",
@@ -1032,7 +1175,11 @@
     "setup": false,
     "ability": "Each night*, you learn if a Demon voted today.",
     "name_ru": "Цветочница",
-    "ability_ru": "Каждую ночь* вы узнаёте, голосовал ли Демон сегодня."
+    "ability_ru": "Каждую ночь* вы узнаёте, голосовал ли Демон сегодня.",
+    "reminders_ru": [
+      "Демон проголосовал",
+      "Демон не голосовал"
+    ]
   },
   {
     "id": "towncrier",
@@ -1050,7 +1197,11 @@
     "setup": false,
     "ability": "Each night*, you learn if a Minion nominated today.",
     "name_ru": "Городской Глашатай",
-    "ability_ru": "Каждую ночь* вы узнаёте, выдвигал ли Прислужник кого-то на казнь сегодня."
+    "ability_ru": "Каждую ночь* вы узнаёте, выдвигал ли Прислужник кого-то на казнь сегодня.",
+    "reminders_ru": [
+      "Прислужники не выдвинуты",
+      "Прислужник выдвинут"
+    ]
   },
   {
     "id": "oracle",
@@ -1097,7 +1248,10 @@
     "setup": false,
     "ability": "Once per game, at night, choose 2 players (not yourself): you learn if they are the same alignment.",
     "name_ru": "Швея",
-    "ability_ru": "Один раз за игру, ночью, выберите двух игроков (не себя): вы узнаёте, одинаково ли их мировоззрение."
+    "ability_ru": "Один раз за игру, ночью, выберите двух игроков (не себя): вы узнаёте, одинаково ли их мировоззрение.",
+    "reminders_ru": [
+      "Нет способности"
+    ]
   },
   {
     "id": "philosopher",
@@ -1115,7 +1269,11 @@
     "setup": false,
     "ability": "Once per game, at night, choose a good character: gain that ability. If this character is in play, they are drunk.",
     "name_ru": "Философ",
-    "ability_ru": "Один раз за игру, ночью, выберите доброго персонажа: вы получаете его способность. Если этот персонаж уже в игре, он становится пьяным."
+    "ability_ru": "Один раз за игру, ночью, выберите доброго персонажа: вы получаете его способность. Если этот персонаж уже в игре, он становится пьяным.",
+    "reminders_ru": [
+      "Пьяный",
+      "Это Философ"
+    ]
   },
   {
     "id": "artist",
@@ -1132,7 +1290,10 @@
     "setup": false,
     "ability": "Once per game, during the day, privately ask the Storyteller any yes/no question.",
     "name_ru": "Художник",
-    "ability_ru": "Один раз за игру, днём, приватно задайте Рассказчику любой вопрос, требующий ответа «да» или «нет»."
+    "ability_ru": "Один раз за игру, днём, приватно задайте Рассказчику любой вопрос, требующий ответа «да» или «нет».",
+    "reminders_ru": [
+      "Нет способности"
+    ]
   },
   {
     "id": "juggler",
@@ -1149,7 +1310,10 @@
     "setup": false,
     "ability": "On your 1st day, publicly guess up to 5 players' characters. That night, you learn how many you got correct.",
     "name_ru": "Жонглёр",
-    "ability_ru": "В первый день публично назовите персонажей до пяти игроков. Этой ночью вы узнаёте, сколько угадали верно."
+    "ability_ru": "В первый день публично назовите персонажей до пяти игроков. Этой ночью вы узнаёте, сколько угадали верно.",
+    "reminders_ru": [
+      "Верно"
+    ]
   },
   {
     "id": "sage",
@@ -1196,7 +1360,10 @@
     "setup": false,
     "ability": "When you die, 1 player is drunk from now on.",
     "name_ru": "Возлюбленная",
-    "ability_ru": "Когда вы умираете, один игрок навсегда остаётся пьяным."
+    "ability_ru": "Когда вы умираете, один игрок навсегда остаётся пьяным.",
+    "reminders_ru": [
+      "Пьяный"
+    ]
   },
   {
     "id": "barber",
@@ -1213,7 +1380,10 @@
     "setup": false,
     "ability": "If you died today or tonight, the Demon may choose 2 players (not another Demon) to swap characters.",
     "name_ru": "Цирюльник",
-    "ability_ru": "Если вы умерли сегодня или этой ночью, Демон может выбрать двух игроков (не другого Демона) и поменять их персонажами."
+    "ability_ru": "Если вы умерли сегодня или этой ночью, Демон может выбрать двух игроков (не другого Демона) и поменять их персонажами.",
+    "reminders_ru": [
+      "Стрижки сегодня ночью"
+    ]
   },
   {
     "id": "klutz",
@@ -1245,7 +1415,10 @@
     "setup": false,
     "ability": "You & an opposing player know each other. If the good player is executed, evil wins. Good can't win if you both live.",
     "name_ru": "Злой Близнец",
-    "ability_ru": "Вы и один противоборствующий игрок знают друг друга. Если добрый близнец казнён, злые побеждают. Добрые не могут победить, пока вы оба живы."
+    "ability_ru": "Вы и один противоборствующий игрок знают друг друга. Если добрый близнец казнён, злые побеждают. Добрые не могут победить, пока вы оба живы.",
+    "reminders_ru": [
+      "Близнец"
+    ]
   },
   {
     "id": "witch",
@@ -1262,7 +1435,10 @@
     "setup": false,
     "ability": "Each night, choose a player: if they nominate tomorrow, they die. If just 3 players live, you lose this ability.",
     "name_ru": "Ведьма",
-    "ability_ru": "Каждую ночь выберите игрока: если он завтра выдвинет кого-то на казнь, он умрёт. Если в живых остаётся только 3 игрока, вы теряете эту способность."
+    "ability_ru": "Каждую ночь выберите игрока: если он завтра выдвинет кого-то на казнь, он умрёт. Если в живых остаётся только 3 игрока, вы теряете эту способность.",
+    "reminders_ru": [
+      "Проклят"
+    ]
   },
   {
     "id": "cerenovus",
@@ -1279,7 +1455,10 @@
     "setup": false,
     "ability": "Each night, choose a player & a good character: they are “mad” they are this character tomorrow, or might be executed.",
     "name_ru": "Церенов",
-    "ability_ru": "Каждую ночь выберите игрока и доброго персонажа: завтра этот игрок «убеждён», что он — этот персонаж, иначе его могут казнить."
+    "ability_ru": "Каждую ночь выберите игрока и доброго персонажа: завтра этот игрок «убеждён», что он — этот персонаж, иначе его могут казнить.",
+    "reminders_ru": [
+      "Убеждён"
+    ]
   },
   {
     "id": "pithag",
@@ -1312,7 +1491,11 @@
     "setup": true,
     "ability": "Each night*, choose a player: they die. The 1st Outsider this kills becomes an evil Fang Gu & you die instead. [+1 Outsider]",
     "name_ru": "Фан Гу",
-    "ability_ru": "Каждую ночь* выберите игрока: он умирает. Первый убитый вами Чужак вместо смерти становится злым Фан Гу, а вы умираете вместо него. [+1 Чужак]"
+    "ability_ru": "Каждую ночь* выберите игрока: он умирает. Первый убитый вами Чужак вместо смерти становится злым Фан Гу, а вы умираете вместо него. [+1 Чужак]",
+    "reminders_ru": [
+      "Мёртвый",
+      "Использован"
+    ]
   },
   {
     "id": "vigormortis",
@@ -1331,7 +1514,12 @@
     "setup": true,
     "ability": "Each night*, choose a player: they die. Minions you kill keep their ability & poison 1 Townsfolk neighbour. [−1 Outsider]",
     "name_ru": "Вигормортис",
-    "ability_ru": "Каждую ночь* выберите игрока: он умирает. Убитые вами Прислужники сохраняют свою способность и отравляют одного соседнего Горожанина. [−1 Чужак]"
+    "ability_ru": "Каждую ночь* выберите игрока: он умирает. Убитые вами Прислужники сохраняют свою способность и отравляют одного соседнего Горожанина. [−1 Чужак]",
+    "reminders_ru": [
+      "Мёртвый",
+      "Есть способность",
+      "Отравлен"
+    ]
   },
   {
     "id": "nodashii",
@@ -1349,7 +1537,11 @@
     "setup": false,
     "ability": "Each night*, choose a player: they die. Your 2 Townsfolk neighbours are poisoned.",
     "name_ru": "Но Даши",
-    "ability_ru": "Каждую ночь* выберите игрока: он умирает. Два ваших соседа-Горожанина всегда отравлены."
+    "ability_ru": "Каждую ночь* выберите игрока: он умирает. Два ваших соседа-Горожанина всегда отравлены.",
+    "reminders_ru": [
+      "Мёртвый",
+      "Отравлен"
+    ]
   },
   {
     "id": "vortox",
@@ -1366,7 +1558,10 @@
     "setup": false,
     "ability": "Each night*, choose a player: they die. Townsfolk abilities yield false info. Each day, if no-one is executed, evil wins.",
     "name_ru": "Вортокс",
-    "ability_ru": "Каждую ночь* выберите игрока: он умирает. Способности Горожан дают ложную информацию. Каждый день, если никто не казнён, злые побеждают."
+    "ability_ru": "Каждую ночь* выберите игрока: он умирает. Способности Горожан дают ложную информацию. Каждый день, если никто не казнён, злые побеждают.",
+    "reminders_ru": [
+      "Мёртвый"
+    ]
   },
   {
     "id": "barista",
@@ -1384,7 +1579,11 @@
     "setup": false,
     "ability": "Each night, until dusk, 1) a player becomes sober, healthy and gets true info, or 2) their ability works twice. They learn which.",
     "name_ru": "Бариста",
-    "ability_ru": "Каждую ночь, до рассвета: 1) один игрок становится трезвым, здоровым и получает верную информацию, или 2) его способность срабатывает дважды. Этот игрок узнаёт, что именно произошло."
+    "ability_ru": "Каждую ночь, до рассвета: 1) один игрок становится трезвым, здоровым и получает верную информацию, или 2) его способность срабатывает дважды. Этот игрок узнаёт, что именно произошло.",
+    "reminders_ru": [
+      "Трезвый и здоровый",
+      "Способность дважды"
+    ]
   },
   {
     "id": "harlot",
@@ -1401,7 +1600,10 @@
     "setup": false,
     "ability": "Each night*, choose a living player: if they agree, you learn their character, but you both might die.",
     "name_ru": "Блудница",
-    "ability_ru": "Каждую ночь* выберите живого игрока: если он соглашается, вы узнаёте его персонажа, но оба вы можете умереть."
+    "ability_ru": "Каждую ночь* выберите живого игрока: если он соглашается, вы узнаёте его персонажа, но оба вы можете умереть.",
+    "reminders_ru": [
+      "Мёртвый"
+    ]
   },
   {
     "id": "butcher",
@@ -1434,7 +1636,11 @@
     "setup": false,
     "ability": "Once per game, at night, choose a dead player: they regain their ability until dusk.",
     "name_ru": "Собиратель Костей",
-    "ability_ru": "Один раз за игру, ночью, выберите мёртвого игрока: он восстанавливает свою способность до рассвета."
+    "ability_ru": "Один раз за игру, ночью, выберите мёртвого игрока: он восстанавливает свою способность до рассвета.",
+    "reminders_ru": [
+      "Нет способности",
+      "Есть способность"
+    ]
   },
   {
     "id": "deviant",
@@ -1466,7 +1672,10 @@
     "setup": false,
     "ability": "You start knowing 3 players, 1 and only 1 of which is evil.",
     "name_ru": "Дворянин",
-    "ability_ru": "В начале игры вы знаете троих игроков, среди которых ровно один злой."
+    "ability_ru": "В начале игры вы знаете троих игроков, среди которых ровно один злой.",
+    "reminders_ru": [
+      "Видел"
+    ]
   },
   {
     "id": "bountyhunter",
@@ -1483,7 +1692,10 @@
     "setup": true,
     "ability": "You start knowing 1 evil player. If the player you know dies, you learn another evil player tonight. [1 Townsfolk is evil]",
     "name_ru": "Охотник за Головами",
-    "ability_ru": "В начале игры вы знаете одного злого игрока. Если он умирает, этой же ночью вы узнаёте другого злого. [1 Горожанин является злым]"
+    "ability_ru": "В начале игры вы знаете одного злого игрока. Если он умирает, этой же ночью вы узнаёте другого злого. [1 Горожанин является злым]",
+    "reminders_ru": [
+      "Известен"
+    ]
   },
   {
     "id": "pixie",
@@ -1501,7 +1713,11 @@
     "setup": false,
     "ability": "You start knowing 1 in-play Townsfolk. If you were mad that you were this character, you gain their ability when they die.",
     "name_ru": "Пикси",
-    "ability_ru": "В начале игры вы знаете одного Горожанина, который есть в игре. Если вы были «убеждены», что вы — этот персонаж, после его смерти вы получаете его способность."
+    "ability_ru": "В начале игры вы знаете одного Горожанина, который есть в игре. Если вы были «убеждены», что вы — этот персонаж, после его смерти вы получаете его способность.",
+    "reminders_ru": [
+      "Убеждён",
+      "Есть способность"
+    ]
   },
   {
     "id": "general",
@@ -1533,7 +1749,10 @@
     "setup": false,
     "ability": "Each night, choose a player: a Minion, if chosen, learns this. All chosen Minions have no ability.",
     "name_ru": "Проповедник",
-    "ability_ru": "Каждую ночь выберите игрока: если выбранный — Прислужник, он узнаёт об этом. Все выбранные таким образом Прислужники теряют свои способности."
+    "ability_ru": "Каждую ночь выберите игрока: если выбранный — Прислужник, он узнаёт об этом. Все выбранные таким образом Прислужники теряют свои способности.",
+    "reminders_ru": [
+      "На проповеди"
+    ]
   },
   {
     "id": "king",
@@ -1569,7 +1788,14 @@
     "setup": true,
     "ability": "Each night, you learn 1 player of each character type, until there are no more types to learn. [+1 Outsider]",
     "name_ru": "Воздухоплаватель",
-    "ability_ru": "Каждую ночь вы узнаёте по одному игроку каждого типа персонажей, пока типы не закончатся. [+1 Чужак]"
+    "ability_ru": "Каждую ночь вы узнаёте по одному игроку каждого типа персонажей, пока типы не закончатся. [+1 Чужак]",
+    "reminders_ru": [
+      "Видел Горожанина",
+      "Видел Чужака",
+      "Видел Прислужника",
+      "Видел Демона",
+      "Видел Путника"
+    ]
   },
   {
     "id": "cultleader",
@@ -1601,7 +1827,10 @@
     "setup": false,
     "ability": "Each night*, choose a living player: if good, they die, but they are the only player that can die tonight.",
     "name_ru": "Оборотень",
-    "ability_ru": "Каждую ночь* выберите живого игрока: если он добрый, он умирает и становится единственным, кто может умереть этой ночью."
+    "ability_ru": "Каждую ночь* выберите живого игрока: если он добрый, он умирает и становится единственным, кто может умереть этой ночью.",
+    "reminders_ru": [
+      "Мёртвый"
+    ]
   },
   {
     "id": "amnesiac",
@@ -1618,7 +1847,10 @@
     "setup": false,
     "ability": "You do not know what your ability is. Each day, privately guess what it is: you learn how accurate you are.",
     "name_ru": "Амнезиак",
-    "ability_ru": "Вы не знаете, какова ваша способность. Каждый день приватно угадайте её: вы узнаёте, насколько вы точны."
+    "ability_ru": "Вы не знаете, какова ваша способность. Каждый день приватно угадайте её: вы узнаёте, насколько вы точны.",
+    "reminders_ru": [
+      "?"
+    ]
   },
   {
     "id": "nightwatchman",
@@ -1635,7 +1867,10 @@
     "setup": false,
     "ability": "Once per game, at night, choose a player: they learn who you are.",
     "name_ru": "Ночной Сторож",
-    "ability_ru": "Один раз за игру, ночью, выберите игрока: он узнаёт, кто вы."
+    "ability_ru": "Один раз за игру, ночью, выберите игрока: он узнаёт, кто вы.",
+    "reminders_ru": [
+      "Нет способности"
+    ]
   },
   {
     "id": "engineer",
@@ -1652,7 +1887,10 @@
     "setup": false,
     "ability": "Once per game, at night, choose which Minions or which Demon is in play.",
     "name_ru": "Инженер",
-    "ability_ru": "Один раз за игру, ночью, выберите, какие Прислужники или какой Демон находятся в игре."
+    "ability_ru": "Один раз за игру, ночью, выберите, какие Прислужники или какой Демон находятся в игре.",
+    "reminders_ru": [
+      "Нет способности"
+    ]
   },
   {
     "id": "fisherman",
@@ -1669,7 +1907,10 @@
     "setup": false,
     "ability": "Once per game, during the day, visit the Storyteller for some advice to help you win.",
     "name_ru": "Рыбак",
-    "ability_ru": "Один раз за игру, днём, обратитесь к Рассказчику за советом, который поможет вам победить."
+    "ability_ru": "Один раз за игру, днём, обратитесь к Рассказчику за советом, который поможет вам победить.",
+    "reminders_ru": [
+      "Нет способности"
+    ]
   },
   {
     "id": "huntsman",
@@ -1686,7 +1927,10 @@
     "setup": true,
     "ability": "Once per game, at night, choose a living player: the Damsel, if chosen, becomes a not-in-play Townsfolk. [+the Damsel]",
     "name_ru": "Охотник",
-    "ability_ru": "Один раз за игру, ночью, выберите живого игрока: если выбранная — Барышня, она становится Горожанином, которого нет в игре. [+Барышня]"
+    "ability_ru": "Один раз за игру, ночью, выберите живого игрока: если выбранная — Барышня, она становится Горожанином, которого нет в игре. [+Барышня]",
+    "reminders_ru": [
+      "Нет способности"
+    ]
   },
   {
     "id": "alchemist",
@@ -1704,7 +1948,10 @@
     "setup": false,
     "ability": "You have a not-in-play Minion ability.",
     "name_ru": "Алхимик",
-    "ability_ru": "У вас есть способность Прислужника, которого нет в игре."
+    "ability_ru": "У вас есть способность Прислужника, которого нет в игре.",
+    "remindersGlobal_ru": [
+      "Это Алхимик"
+    ]
   },
   {
     "id": "farmer",
@@ -1766,7 +2013,10 @@
     "setup": false,
     "ability": "Minions & Demons do not know each other. If you die, they learn who each other are that night.",
     "name_ru": "Маковод",
-    "ability_ru": "Прислужники и Демоны не знают друг друга. Если вы умираете, этой же ночью они узнают друг друга."
+    "ability_ru": "Прислужники и Демоны не знают друг друга. Если вы умираете, этой же ночью они узнают друг друга.",
+    "reminders_ru": [
+      "Злой просыпается"
+    ]
   },
   {
     "id": "atheist",
@@ -1799,7 +2049,11 @@
     "setup": false,
     "ability": "You have the ability of the recently killed executee. If they are evil, you are poisoned until a good player dies by execution.",
     "name_ru": "Каннибал",
-    "ability_ru": "У вас есть способность последнего казнённого игрока. Если он был злым, вы отравлены, пока добрый игрок не умрёт от казни."
+    "ability_ru": "У вас есть способность последнего казнённого игрока. Если он был злым, вы отравлены, пока добрый игрок не умрёт от казни.",
+    "reminders_ru": [
+      "Отравлен",
+      "Умер сегодня"
+    ]
   },
   {
     "id": "snitch",
@@ -1831,7 +2085,10 @@
     "setup": false,
     "ability": "Each night*, if either good living neighbour is drunk or poisoned, you die.",
     "name_ru": "Акробат",
-    "ability_ru": "Каждую ночь*, если один из ваших живых добрых соседей пьян или отравлен, вы умираете."
+    "ability_ru": "Каждую ночь*, если один из ваших живых добрых соседей пьян или отравлен, вы умираете.",
+    "reminders_ru": [
+      "Мёртвый"
+    ]
   },
   {
     "id": "puzzlemaster",
@@ -1849,7 +2106,11 @@
     "setup": false,
     "ability": "1 player is drunk, even if you die. If you guess (once) who it is, learn the Demon player, but guess wrong & get false info.",
     "name_ru": "Загадочник",
-    "ability_ru": "Один игрок пьян — даже если вы умрёте. Если вы (один раз) угадаете кто — узнайте, кто является Демоном. Если ошибётесь — получите ложную информацию."
+    "ability_ru": "Один игрок пьян — даже если вы умрёте. Если вы (один раз) угадаете кто — узнайте, кто является Демоном. Если ошибётесь — получите ложную информацию.",
+    "reminders_ru": [
+      "Пьяный",
+      "Догадка использована"
+    ]
   },
   {
     "id": "heretic",
@@ -1881,7 +2142,10 @@
     "setup": false,
     "ability": "All Minions know you are in play. If a Minion publicly guesses you (once), your team loses.",
     "name_ru": "Барышня",
-    "ability_ru": "Все Прислужники знают, что вы в игре. Если Прислужник публично угадает вас (один раз), ваша команда проигрывает."
+    "ability_ru": "Все Прислужники знают, что вы в игре. Если Прислужник публично угадает вас (один раз), ваша команда проигрывает.",
+    "reminders_ru": [
+      "Догадка использована"
+    ]
   },
   {
     "id": "golem",
@@ -1898,7 +2162,10 @@
     "setup": false,
     "ability": "You may only nominate once per game. When you do, if the nominee is not the Demon, they die.",
     "name_ru": "Голем",
-    "ability_ru": "Вы можете выдвинуть на казнь только один раз за игру. Когда вы это делаете, если выдвинутый — не Демон, он умирает."
+    "ability_ru": "Вы можете выдвинуть на казнь только один раз за игру. Когда вы это делаете, если выдвинутый — не Демон, он умирает.",
+    "reminders_ru": [
+      "Не может выдвигать"
+    ]
   },
   {
     "id": "politician",
@@ -1933,7 +2200,13 @@
     "setup": false,
     "ability": "On your 1st night, look at the Grimoire and choose a player: they are poisoned. 1 good player knows a Widow is in play.",
     "name_ru": "Вдова",
-    "ability_ru": "В первую ночь просмотрите Гримуар и выберите игрока: он отравлен. Один добрый игрок узнаёт, что в игре есть Вдова."
+    "ability_ru": "В первую ночь просмотрите Гримуар и выберите игрока: он отравлен. Один добрый игрок узнаёт, что в игре есть Вдова.",
+    "reminders_ru": [
+      "Отравлен"
+    ],
+    "remindersGlobal_ru": [
+      "Знает"
+    ]
   },
   {
     "id": "fearmonger",
@@ -1950,7 +2223,10 @@
     "setup": false,
     "ability": "Each night, choose a player. If you nominate & execute them, their team loses. All players know if you choose a new player.",
     "name_ru": "Паникёр",
-    "ability_ru": "Каждую ночь выберите игрока. Если вы выдвигаете и казните его, его команда проигрывает. Все игроки узнают, когда вы выбираете нового игрока."
+    "ability_ru": "Каждую ночь выберите игрока. Если вы выдвигаете и казните его, его команда проигрывает. Все игроки узнают, когда вы выбираете нового игрока.",
+    "reminders_ru": [
+      "Страх"
+    ]
   },
   {
     "id": "psychopath",
@@ -1982,7 +2258,10 @@
     "setup": false,
     "ability": "If you publicly claim to be the Goblin when nominated & are executed that day, your team wins.",
     "name_ru": "Гоблин",
-    "ability_ru": "Если вас выдвигают на казнь, вы публично объявляете себя Гоблином, и в тот же день вас казнят — ваша команда побеждает."
+    "ability_ru": "Если вас выдвигают на казнь, вы публично объявляете себя Гоблином, и в тот же день вас казнят — ваша команда побеждает.",
+    "reminders_ru": [
+      "Объявил"
+    ]
   },
   {
     "id": "mephit",
@@ -2000,7 +2279,11 @@
     "setup": false,
     "ability": "You start knowing a secret word. The 1st good player to say this word becomes evil that night.",
     "name_ru": "Мефит",
-    "ability_ru": "В начале игры вы знаете секретное слово. Первый добрый игрок, произнёсший это слово, этой же ночью становится злым."
+    "ability_ru": "В начале игры вы знаете секретное слово. Первый добрый игрок, произнёсший это слово, этой же ночью становится злым.",
+    "reminders_ru": [
+      "Становится злым",
+      "Нет способности"
+    ]
   },
   {
     "id": "mezepheles",
@@ -2018,7 +2301,11 @@
     "setup": false,
     "ability": "You start knowing a secret word. The 1st good player to say this word becomes evil that night.",
     "name_ru": "Мезефелес",
-    "ability_ru": "В начале игры вы знаете секретное слово. Первый добрый игрок, произнёсший это слово, этой же ночью становится злым."
+    "ability_ru": "В начале игры вы знаете секретное слово. Первый добрый игрок, произнёсший это слово, этой же ночью становится злым.",
+    "reminders_ru": [
+      "Становится злым",
+      "Нет способности"
+    ]
   },
   {
     "id": "marionette",
@@ -2036,7 +2323,10 @@
     "setup": true,
     "ability": "You think you are a good character but you are not. The Demon knows who you are. [You neighbour the Demon]",
     "name_ru": "Марионетка",
-    "ability_ru": "Вы думаете, что вы — добрый персонаж, но это не так. Демон знает, кто вы. [Вы сидите рядом с Демоном]"
+    "ability_ru": "Вы думаете, что вы — добрый персонаж, но это не так. Демон знает, кто вы. [Вы сидите рядом с Демоном]",
+    "remindersGlobal_ru": [
+      "Это Марионетка"
+    ]
   },
   {
     "id": "boomdandy",
@@ -2070,7 +2360,11 @@
     "setup": true,
     "ability": "Each night, Minions choose who babysits Lil' Monsta's token & \"is the Demon\". A player dies each night*. [+1 Minion]",
     "name_ru": "Малыш Монстр",
-    "ability_ru": "Каждую ночь Прислужники выбирают, кто нянчит жетон Малыша Монстра и «является Демоном». Каждую ночь* умирает один игрок. [+1 Прислужник]"
+    "ability_ru": "Каждую ночь Прислужники выбирают, кто нянчит жетон Малыша Монстра и «является Демоном». Каждую ночь* умирает один игрок. [+1 Прислужник]",
+    "remindersGlobal_ru": [
+      "Это Демон",
+      "Мёртвый"
+    ]
   },
   {
     "id": "lleech",
@@ -2088,7 +2382,11 @@
     "setup": false,
     "ability": "Each night*, choose a player: they die. You start by choosing an alive player: they are poisoned - you die if & only if they die.",
     "name_ru": "Пиявка",
-    "ability_ru": "Каждую ночь* выберите игрока: он умирает. В начале игры выберите живого игрока: он отравлен — вы умираете тогда и только тогда, когда умирает он."
+    "ability_ru": "Каждую ночь* выберите игрока: он умирает. В начале игры выберите живого игрока: он отравлен — вы умираете тогда и только тогда, когда умирает он.",
+    "reminders_ru": [
+      "Мёртвый",
+      "Отравлен"
+    ]
   },
   {
     "id": "alhadikhia",
@@ -2109,7 +2407,14 @@
     "setup": false,
     "ability": "Each night*, choose 3 players (all players learn who): each silently chooses to live or die, but if all live, all die.",
     "name_ru": "Аль-Хадихия",
-    "ability_ru": "Каждую ночь* выберите трёх игроков (все игроки узнают кого): каждый из них тайно выбирает — жить или умереть. Если все выбирают жить — все умирают."
+    "ability_ru": "Каждую ночь* выберите трёх игроков (все игроки узнают кого): каждый из них тайно выбирает — жить или умереть. Если все выбирают жить — все умирают.",
+    "reminders_ru": [
+      "1",
+      "2",
+      "3",
+      "Выбрал смерть",
+      "Выбрал жизнь"
+    ]
   },
   {
     "id": "legion",
@@ -2127,7 +2432,11 @@
     "setup": true,
     "ability": "Each night*, a player might die. Executions fail if only evil voted. You register as a Minion too. [Most players are Legion]",
     "name_ru": "Легион",
-    "ability_ru": "Каждую ночь* может умереть один игрок. Казнь не происходит, если голосовали только злые. Вы также воспринимаетесь как Прислужник. [Большинство игроков — Легион]"
+    "ability_ru": "Каждую ночь* может умереть один игрок. Казнь не происходит, если голосовали только злые. Вы также воспринимаетесь как Прислужник. [Большинство игроков — Легион]",
+    "reminders_ru": [
+      "Мёртвый",
+      "Скоро умрёт"
+    ]
   },
   {
     "id": "leviathan",
@@ -2149,7 +2458,15 @@
     "setup": false,
     "ability": "If more than 1 good player is executed, you win. All players know you are in play. After day 5, evil wins.",
     "name_ru": "Левиафан",
-    "ability_ru": "Если казнят более одного доброго игрока, вы побеждаете. Все знают, что вы в игре. После пятого дня злые побеждают."
+    "ability_ru": "Если казнят более одного доброго игрока, вы побеждаете. Все знают, что вы в игре. После пятого дня злые побеждают.",
+    "reminders_ru": [
+      "День 1",
+      "День 2",
+      "День 3",
+      "День 4",
+      "День 5",
+      "Добрый игрок казнён"
+    ]
   },
   {
     "id": "riot",

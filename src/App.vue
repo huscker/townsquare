@@ -187,7 +187,7 @@ h4,
 h5 {
   margin: 0;
   text-align: center;
-  font-family: PiratesBay, sans-serif;
+  font-family: PiratesBay, "Lobster", "Roboto Condensed", sans-serif;
   letter-spacing: 1px;
   font-weight: normal;
 }
