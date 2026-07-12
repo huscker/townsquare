@@ -1,5 +1,12 @@
 # Release Notes
 
+### Version 2.16.3
+- fixed WebSocket connections being rejected in production (ALLOWED_ORIGINS now configurable via Helm values)
+- fixed reminder tokens persisting across sessions when a player joins a new game
+- "Remove all" in Characters tab now clears reminder tokens on all connected players
+
+---
+
 ### Version 2.16.2
 - fixed custom script format to support new script tool JSON
 - updated packages to be compatible with Node >= 18 again

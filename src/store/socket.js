@@ -217,6 +217,10 @@ class LiveSession {
       case "pronouns":
         this._updatePlayerPronouns(params);
         break;
+      case "clearReminders":
+        if (!this._isSpectator) return;
+        this._store.commit("players/clearReminders");
+        break;
     }
   }
 
@@ -857,6 +861,14 @@ class LiveSession {
     if (this._isSpectator) return;
     this._send("remove", payload);
   }
+
+  /**
+   * Tell all players to clear their reminder tokens. ST only
+   */
+  sendClearReminders() {
+    if (this._isSpectator) return;
+    this._send("clearReminders");
+  }
 }
 
 export default (store) => {
@@ -924,6 +936,9 @@ export default (store) => {
         break;
       case "players/remove":
         session.removePlayer(payload);
+        break;
+      case "players/clearReminders":
+        session.sendClearReminders();
         break;
       case "players/set":
       case "players/clear":
