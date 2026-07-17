@@ -1,6 +1,0 @@
-{{- if .Values.extraDeploy }}
-{{- range $index, $extra := .Values.extraDeploy }}
----
-{{ include "common.tplvalues.render" ( dict "value" $extra "context" $) }}
-{{- end }}
-{{- end }}

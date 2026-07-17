@@ -1,8 +1,6 @@
 # Blood on the Clocktower Grimoire & Town Square
 
-[![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/townsquare)](https://artifacthub.io/packages/search?repo=townsquare)
-
-> **Fork note**: This is a fork of [bra1n/townsquare](https://github.com/bra1n/townsquare) with added self-hosting support. See the [Helm chart](chart/townsquare/) for deployment details.
+> **Fork note**: This is a fork of [bra1n/townsquare](https://github.com/bra1n/townsquare) with added self-hosting support. For Kubernetes deployment, see the [Helm chart](https://github.com/huscker/charts/tree/main/charts/townsquare) in [huscker/charts](https://github.com/huscker/charts).
 
 > :warning: **This project is no longer actively maintained** and will only receive critical bug fixes. :warning:
 
