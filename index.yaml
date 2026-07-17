@@ -3,6 +3,53 @@ entries:
   townsquare:
   - annotations:
       artifacthub.io/changes: |
+        - kind: added
+          description: Russian role names and ability descriptions in reference sheet and night order
+        - kind: added
+          description: Russian language support with in-app language switcher
+        - kind: added
+          description: Clear reminders and Sync state to players buttons for Storyteller
+      artifacthub.io/images: |
+        - name: townsquare-frontend
+          image: ghcr.io/huscker/townsquare-frontend:2.15.2
+        - name: townsquare-backend
+          image: ghcr.io/huscker/townsquare-backend:2.15.2
+      artifacthub.io/license: GPL-3.0
+      artifacthub.io/links: |
+        - name: source
+          url: https://github.com/huscker/townsquare
+        - name: support
+          url: https://github.com/huscker/townsquare/issues
+        - name: changelog
+          url: https://github.com/huscker/townsquare/blob/develop/CHANGELOG.md
+      artifacthub.io/repository-id: 302d8d02-581f-4ac5-8134-1d36d5c5c1b3
+    apiVersion: v2
+    appVersion: 2.17.2
+    created: "2026-07-17T08:33:00.651275357Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      version: 2.x.x
+    description: Blood on the Clocktower Town Square - Helm chart for Kubernetes deployment
+    digest: 7c19386b1ad8fdeb8a603fd80b1d190950770d8e1f1247e72934cb158e7d6443
+    home: https://github.com/huscker/townsquare
+    keywords:
+    - botc
+    - townsquare
+    - clocktower
+    - game
+    maintainers:
+    - email: egorgolubev@bulltrade.org
+      name: huscker
+    name: townsquare
+    sources:
+    - https://github.com/huscker/townsquare
+    type: application
+    urls:
+    - townsquare-1.0.4.tgz
+    version: 1.0.4
+  - annotations:
+      artifacthub.io/changes: |
         - Initial Helm chart release
       artifacthub.io/images: |
         - name: townsquare-frontend
@@ -157,4 +204,4 @@ entries:
     urls:
     - https://github.com/huscker/townsquare/releases/download/townsquare-1.0.0/townsquare-1.0.0.tgz
     version: 1.0.0
-generated: "2026-07-12T11:32:04.852638809Z"
+generated: "2026-07-17T08:33:00.651298431Z"
